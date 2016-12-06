@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pLk-Qu-pWI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="6F9-EI-Rc6">
+            <objects>
+                <viewController id="pLk-Qu-pWI" customClass="ViewController" customModule="AnimationTabataTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="afD-18-GIW"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Ma-hg-824"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aur-wJ-wyq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TABATA TIMER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76d-mh-qFA">
+                                <frame key="frameInset" minX="98" minY="321" width="178" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="24"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SGh-Di-WmP" customClass="MBCircularProgressBarView">
+                                <frame key="frameInset" minX="16" minY="510" width="97" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FUK-pz-L6f" customClass="MBCircularProgressBarView">
+                                <frame key="frameInset" minX="281" minY="499" width="78" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkV-qO-DlE">
+                                <frame key="frameInset" minX="157" minY="583" width="60" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Play"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYN-O1-rig">
+                                <frame key="frameInset" minX="95" minY="589" width="54" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Pause"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGt-cW-Loz">
+                                <frame key="frameInset" minX="243" minY="583" width="58" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Stop"/>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yab-89-15m">
+                                <frame key="frameInset" minX="10" minY="156" width="355" height="355"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U86-oZ-iSJ" customClass="SpringView" customModule="Spring">
+                                        <frame key="frameInset" minX="8" minY="8" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3vO-61-71p" customClass="MBCircularProgressBarView">
+                                                <frame key="frameInset" minY="8" width="220" height="220"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.85590160709999996" green="0.96245109159999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sa-HK-Jx5" customClass="SpringView" customModule="Spring">
+                                        <frame key="frameInset" minX="127" minY="8" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0BA-fO-WIV" customClass="MBCircularProgressBarView">
+                                                <frame key="frameInset" minX="-8" minY="8" width="220" height="220"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.85590160709999996" green="0.96245109159999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wvR-yh-VFG" customClass="SpringView" customModule="Spring">
+                                        <frame key="frameInset" minX="67" minY="135" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rhs-y0-Ne6" customClass="MBCircularProgressBarView">
+                                                <frame key="frameInset" minX="-8" width="220" height="220"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yab-89-15m" secondAttribute="height" multiplier="1:1" id="Vie-Kl-HK7"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elF-p7-r1i">
+                                <frame key="frameInset" minX="309" minY="615" width="56" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Setting"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="baseTurnView" destination="yab-89-15m" id="L7A-8S-gjx"/>
+                        <outlet property="pauseButton" destination="EYN-O1-rig" id="jKa-gA-y6c"/>
+                        <outlet property="prepareAnimView" destination="7sa-HK-Jx5" id="ToN-nh-V4W"/>
+                        <outlet property="prepareGraph" destination="0BA-fO-WIV" id="5Lz-vr-CnG"/>
+                        <outlet property="restAnimView" destination="U86-oZ-iSJ" id="BjB-aZ-WTf"/>
+                        <outlet property="restGraph" destination="3vO-61-71p" id="bZM-47-3O7"/>
+                        <outlet property="setGraph" destination="SGh-Di-WmP" id="cra-aO-Dmc"/>
+                        <outlet property="startButton" destination="QkV-qO-DlE" id="sT1-fF-b7k"/>
+                        <outlet property="stopButton" destination="kGt-cW-Loz" id="xPv-QC-rtV"/>
+                        <outlet property="titleLabel" destination="76d-mh-qFA" id="3oi-Jt-AAQ"/>
+                        <outlet property="totalGraph" destination="FUK-pz-L6f" id="Lfo-ch-XFA"/>
+                        <outlet property="workOutAnimView" destination="wvR-yh-VFG" id="spR-TQ-xzs"/>
+                        <outlet property="workOutGraph" destination="Rhs-y0-Ne6" id="hpG-O1-oRa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IS3-lW-wK1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-460" y="175.86206896551727"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Pause" width="94" height="97"/>
+        <image name="Play" width="95" height="97"/>
+        <image name="Setting" width="95" height="96"/>
+        <image name="Stop" width="94" height="97"/>
+    </resources>
+</document>

@@ -1,0 +1,965 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C3FEBF874BF7D0C28753E9EA0B94238 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9A15A4AFBB9BA5D1352E33130882B0 /* Spring.swift */; };
+		2B95200755F4983D22E37C984284F956 /* MBCircularProgressBarLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C48C6300C4021517CDBB5A44CAEEF75 /* MBCircularProgressBarLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C8623FE6C6AFA83EF5458E0BF3E196F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBEF1C3A6A6B46DDCEC5205E0679594 /* LoadingView.swift */; };
+		2CB298DAAA66B239E79A77582A242D61 /* example.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C40F4E5D02DC27B1DA97DA58E3DC331 /* example.png */; };
+		321F06C1704CC87309FD84DC091E94FD /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DB886DA6C183C7FF3EA37BE1EF3136 /* DesignableView.swift */; };
+		32929D3FEC900F640EE6F4200A7C14FB /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F2EDF88CF5CB7816C660C466A7245 /* DesignableTextView.swift */; };
+		334FE7BC11CFFB10DD14797B140B0AE3 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FD5CB2E3C8D528B177302D34C32720 /* DesignableButton.swift */; };
+		3A29F5C2165DC18C405F9BE28F8BDE26 /* Pods-AnimationTabataTimer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 00EE2C46C01DA62C46480FE4D9E21003 /* Pods-AnimationTabataTimer-dummy.m */; };
+		3B0B555A2A592577C142BBD67260EF4F /* Spring-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EEA3140BDADD6E3C7F21336C9A388965 /* Spring-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D034550634265745F8126DCD48D98F8 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9918EF9117EAD3C02F3EA8E6D4CD9 /* AsyncImageView.swift */; };
+		3DB46BF3C335C15BDA9B52C9C81AB692 /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B6C97FECE3C99365EB2F75A0F97AC4 /* DesignableTabBarController.swift */; };
+		3FD1A2BE67FAAF56145D19AEA1A5C852 /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E187552A7154BB847885F9FC1EC9F8C /* SpringTextField.swift */; };
+		4DEDFA59E2C9A6F7A1069205C5D43D49 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C24460ECE17BD0317AEBA762D2095 /* BlurView.swift */; };
+		52258F7266BCA6FBEC5CB46101805F08 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C135042730C919B0AAA0E3A52866405 /* Misc.swift */; };
+		5CEE8C95E5EC68B56B26415BA572384D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		5D3AD83F0732C7B913552A0D6C73F79B /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290F6EC376E855F885E72704A3222244 /* TransitionZoom.swift */; };
+		6447B5362DD395075EB2433CEE8C21D4 /* MBCircularProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB42B4BF7681D213DDC3659AEAA734D8 /* MBCircularProgressBarView.m */; };
+		6814D919A790A76E79A64BA3B3754560 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5662A62846E36132D639153B087C7567 /* UnwindSegue.swift */; };
+		704D679256BAC0A7C0978D094AF379B2 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BA34BA4AB595B78F1EFFC0399D7E46 /* AsyncButton.swift */; };
+		70936F0EF31B2C3632B5890AB19C96E5 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A927BE53FDDAEF0F2D8D34D72C69AD /* SpringView.swift */; };
+		79931A6F0515A71444E6A90D0906A919 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D577F19D4124532F76A6A9E22089F53B /* AutoTextView.swift */; };
+		7B5440AFD90A172B8D25E8E93E27A04E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053F4FCCDB8AB6A7B6440C09F8D4DA81 /* ImageLoader.swift */; };
+		84E54715BF7C414988FE4338F5CD2F45 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C1A17B797798EE7FD0B196F7CB68B4 /* DesignableImageView.swift */; };
+		8546F815857BF9C93440151A864EB626 /* MBCircularProgressBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FC7805BFD8D51188D9E9099E7D291E9 /* MBCircularProgressBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86C96CE9BF21B8D10756F22C071EFBC5 /* MBCircularProgressBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FCC33CD77518BC82B2D5D6B25874865 /* MBCircularProgressBar-dummy.m */; };
+		97203245E90EE06AD4F70ED07C10C178 /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D080107FB9F072CC06F599B496590 /* SpringTextView.swift */; };
+		97E47FC1AC66E9B796B66DD6FBE9643F /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97523825FB220D40F6DB443B2B861C2A /* SoundPlayer.swift */; };
+		A4A61138B04941895A041A0621F5A2F4 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC5A244A8B00C1AF7040B63E99A6B49 /* SpringLabel.swift */; };
+		A508C85004C9EB43BBDDB25EFAF9EC22 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BBDCD98961C6B1B73E0ADF907B48DBE /* Images.xcassets */; };
+		B0A6C9F0ED9CAA2DC657DAA8CBD5C6F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		B52F14A8938616048811AC3B36D780D4 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD36468BD830711823CE21762F4F51 /* TransitionManager.swift */; };
+		B58DE308BEC09BFB9B0B3A7BB9470041 /* Spring-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EC4FFD5F38C1570E52664B83C988727A /* Spring-dummy.m */; };
+		BE7E4CDA7951F4AB3B42CBA3E16D2570 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2419A400A619DC76A86B2F1F89EE507 /* DesignableTextField.swift */; };
+		BF7C0A2FFD6E4339A8507192575185C8 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA80BD388210CAF7CE389F5F9DFDC118 /* SpringAnimation.swift */; };
+		C6C6053C74B8C53E73B53E91C0B2DCB8 /* Pods-AnimationTabataTimer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 108AF488E78D46659FA98AA9AAB409B2 /* Pods-AnimationTabataTimer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF3CE35A681808932928610E4864C382 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D6D3D361050C4D3D3FD4530F116A47 /* SpringButton.swift */; };
+		E0475FE7B1C11E80681E5EF85ADB9F2D /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A138CE6E58E32F03586EDB74797F4646 /* KeyboardLayoutConstraint.swift */; };
+		E912798811F25351DFFFCFEF1B153B2A /* MBCircularProgressBarLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 429D3ADD5A75BD393745B64695751A66 /* MBCircularProgressBarLayer.m */; };
+		EB70BEA373CD78800BE63150747CE860 /* MBCircularProgressBarView.h in Headers */ = {isa = PBXBuildFile; fileRef = FF7788ED404BE7926018DED83D042E1A /* MBCircularProgressBarView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDA0138BE60021F13000558525F0A77E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		EF6F02487758B4CB4890D4AE07F203AF /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A463C7AF14197883FFBDFDF9E8971EB /* SpringImageView.swift */; };
+		F12AC16EC614C1BC6B849A6FA894FF6C /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C12A8F7B4CE16A33EBB0D589BAE54F7C /* LoadingView.xib */; };
+		F187199FAB67557AAB347A6A628C9A18 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6948BA0CEE99739F79893B6A27D96A0 /* DesignableLabel.swift */; };
+		F88D157974522F8674E5DFA82F8B0A2A /* MBCircularProgressBar.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0A69DA255591F151E7D7D79DBB0ED33F /* MBCircularProgressBar.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		810D769971DA4474447E02BA1D902735 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 860A9179BCFD9F1C616D8653DB2B4F91;
+			remoteInfo = MBCircularProgressBar;
+		};
+		9E7E5B311D0A3155AD9DBBECF50A394C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 462C07EF64042A66893DFB2CE987D061;
+			remoteInfo = Spring;
+		};
+		EBC59F00882F35808CD4B15930E9008E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FC4B2785BB68892651401B8A26A15AD;
+			remoteInfo = "MBCircularProgressBar-MBCircularProgressBar";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00EE2C46C01DA62C46480FE4D9E21003 /* Pods-AnimationTabataTimer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AnimationTabataTimer-dummy.m"; sourceTree = "<group>"; };
+		0442B8DDE55C7EFAD2D383A52159D4C7 /* Pods-AnimationTabataTimer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AnimationTabataTimer-acknowledgements.markdown"; sourceTree = "<group>"; };
+		053F4FCCDB8AB6A7B6440C09F8D4DA81 /* ImageLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = Spring/ImageLoader.swift; sourceTree = "<group>"; };
+		0A69DA255591F151E7D7D79DBB0ED33F /* MBCircularProgressBar.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MBCircularProgressBar.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		108AF488E78D46659FA98AA9AAB409B2 /* Pods-AnimationTabataTimer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AnimationTabataTimer-umbrella.h"; sourceTree = "<group>"; };
+		15A0E9226F376F26B69484D8E4155824 /* Pods-AnimationTabataTimer-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AnimationTabataTimer-frameworks.sh"; sourceTree = "<group>"; };
+		16D7D88070FBFD25B0EB48DCE841EB02 /* MBCircularProgressBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MBCircularProgressBar.modulemap; sourceTree = "<group>"; };
+		1835444DDDCBB63D46ED8DC87BEDCEB3 /* MBCircularProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBCircularProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18DB886DA6C183C7FF3EA37BE1EF3136 /* DesignableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableView.swift; path = Spring/DesignableView.swift; sourceTree = "<group>"; };
+		21A927BE53FDDAEF0F2D8D34D72C69AD /* SpringView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringView.swift; path = Spring/SpringView.swift; sourceTree = "<group>"; };
+		21EB819FF3DF6752A0B0DB8A60BFA7CF /* Pods-AnimationTabataTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AnimationTabataTimer.release.xcconfig"; sourceTree = "<group>"; };
+		290F6EC376E855F885E72704A3222244 /* TransitionZoom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionZoom.swift; path = Spring/TransitionZoom.swift; sourceTree = "<group>"; };
+		2C48C6300C4021517CDBB5A44CAEEF75 /* MBCircularProgressBarLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBCircularProgressBarLayer.h; path = Pod/Classes/MBCircularProgressBarLayer.h; sourceTree = "<group>"; };
+		32CD36468BD830711823CE21762F4F51 /* TransitionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransitionManager.swift; path = Spring/TransitionManager.swift; sourceTree = "<group>"; };
+		36D6D3D361050C4D3D3FD4530F116A47 /* SpringButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringButton.swift; path = Spring/SpringButton.swift; sourceTree = "<group>"; };
+		3A463C7AF14197883FFBDFDF9E8971EB /* SpringImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringImageView.swift; path = Spring/SpringImageView.swift; sourceTree = "<group>"; };
+		3C135042730C919B0AAA0E3A52866405 /* Misc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Misc.swift; path = Spring/Misc.swift; sourceTree = "<group>"; };
+		41FD5CB2E3C8D528B177302D34C32720 /* DesignableButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableButton.swift; path = Spring/DesignableButton.swift; sourceTree = "<group>"; };
+		429D3ADD5A75BD393745B64695751A66 /* MBCircularProgressBarLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MBCircularProgressBarLayer.m; path = Pod/Classes/MBCircularProgressBarLayer.m; sourceTree = "<group>"; };
+		436D080107FB9F072CC06F599B496590 /* SpringTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextView.swift; path = Spring/SpringTextView.swift; sourceTree = "<group>"; };
+		48C64A2264DEC2EA820189994DC855C6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C40F4E5D02DC27B1DA97DA58E3DC331 /* example.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = example.png; path = Pod/Assets/example.png; sourceTree = "<group>"; };
+		4CBEF1C3A6A6B46DDCEC5205E0679594 /* LoadingView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = Spring/LoadingView.swift; sourceTree = "<group>"; };
+		50706BC29AFA37103BD3DBCBBBBEC7BA /* Pods-AnimationTabataTimer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AnimationTabataTimer.modulemap"; sourceTree = "<group>"; };
+		5662A62846E36132D639153B087C7567 /* UnwindSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnwindSegue.swift; path = Spring/UnwindSegue.swift; sourceTree = "<group>"; };
+		5E187552A7154BB847885F9FC1EC9F8C /* SpringTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringTextField.swift; path = Spring/SpringTextField.swift; sourceTree = "<group>"; };
+		64B6C97FECE3C99365EB2F75A0F97AC4 /* DesignableTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTabBarController.swift; path = Spring/DesignableTabBarController.swift; sourceTree = "<group>"; };
+		6FC7805BFD8D51188D9E9099E7D291E9 /* MBCircularProgressBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBCircularProgressBar-umbrella.h"; sourceTree = "<group>"; };
+		70C1A17B797798EE7FD0B196F7CB68B4 /* DesignableImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableImageView.swift; path = Spring/DesignableImageView.swift; sourceTree = "<group>"; };
+		75F87B036479D948EC648B98FF48D325 /* ResourceBundle-MBCircularProgressBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MBCircularProgressBar-Info.plist"; sourceTree = "<group>"; };
+		7A0C24460ECE17BD0317AEBA762D2095 /* BlurView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BlurView.swift; path = Spring/BlurView.swift; sourceTree = "<group>"; };
+		7BBDCD98961C6B1B73E0ADF907B48DBE /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SpringApp/Images.xcassets; sourceTree = "<group>"; };
+		7D62026C827500762B52E8C918761321 /* Spring.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spring.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FAC767E3FF2F7EE43DF4E9E818548BE /* MBCircularProgressBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBCircularProgressBar-prefix.pch"; sourceTree = "<group>"; };
+		81FB722EE97605070A896B41605AF1CB /* Pods-AnimationTabataTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AnimationTabataTimer.debug.xcconfig"; sourceTree = "<group>"; };
+		87BA34BA4AB595B78F1EFFC0399D7E46 /* AsyncButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncButton.swift; path = Spring/AsyncButton.swift; sourceTree = "<group>"; };
+		8FCC33CD77518BC82B2D5D6B25874865 /* MBCircularProgressBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBCircularProgressBar-dummy.m"; sourceTree = "<group>"; };
+		90E55EDAF7E5DB3048055C5F8E220768 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97523825FB220D40F6DB443B2B861C2A /* SoundPlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SoundPlayer.swift; path = Spring/SoundPlayer.swift; sourceTree = "<group>"; };
+		A138CE6E58E32F03586EDB74797F4646 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardLayoutConstraint.swift; path = Spring/KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		A13E2CB60D0FF0F5FDE13A6654161186 /* Pods_AnimationTabataTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimationTabataTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6948BA0CEE99739F79893B6A27D96A0 /* DesignableLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableLabel.swift; path = Spring/DesignableLabel.swift; sourceTree = "<group>"; };
+		A6B1F42866E9EB1587A467DC93F7774B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7C9918EF9117EAD3C02F3EA8E6D4CD9 /* AsyncImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncImageView.swift; path = Spring/AsyncImageView.swift; sourceTree = "<group>"; };
+		ACC5A244A8B00C1AF7040B63E99A6B49 /* SpringLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringLabel.swift; path = Spring/SpringLabel.swift; sourceTree = "<group>"; };
+		AD9A15A4AFBB9BA5D1352E33130882B0 /* Spring.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Spring.swift; path = Spring/Spring.swift; sourceTree = "<group>"; };
+		ADB31C6C919E5DA671A336421D73EE7F /* Spring.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spring.modulemap; sourceTree = "<group>"; };
+		B6A68530219F46D8C352D776307D70DC /* Spring.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spring.xcconfig; sourceTree = "<group>"; };
+		BA518B4CC5693113B8BCCE9EF652CBE8 /* Spring-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-prefix.pch"; sourceTree = "<group>"; };
+		BA80BD388210CAF7CE389F5F9DFDC118 /* SpringAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SpringAnimation.swift; path = Spring/SpringAnimation.swift; sourceTree = "<group>"; };
+		C06F2EDF88CF5CB7816C660C466A7245 /* DesignableTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextView.swift; path = Spring/DesignableTextView.swift; sourceTree = "<group>"; };
+		C12A8F7B4CE16A33EBB0D589BAE54F7C /* LoadingView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = LoadingView.xib; path = Spring/LoadingView.xib; sourceTree = "<group>"; };
+		C2419A400A619DC76A86B2F1F89EE507 /* DesignableTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DesignableTextField.swift; path = Spring/DesignableTextField.swift; sourceTree = "<group>"; };
+		CB42B4BF7681D213DDC3659AEAA734D8 /* MBCircularProgressBarView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MBCircularProgressBarView.m; path = Pod/Classes/MBCircularProgressBarView.m; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D237FBA47A86D06CB0E82B189BD30BD7 /* Pods-AnimationTabataTimer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AnimationTabataTimer-acknowledgements.plist"; sourceTree = "<group>"; };
+		D577F19D4124532F76A6A9E22089F53B /* AutoTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoTextView.swift; path = Spring/AutoTextView.swift; sourceTree = "<group>"; };
+		EA21DA498A5216857CBC46010A0A0D9C /* MBCircularProgressBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBCircularProgressBar.xcconfig; sourceTree = "<group>"; };
+		EC4FFD5F38C1570E52664B83C988727A /* Spring-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spring-dummy.m"; sourceTree = "<group>"; };
+		EEA3140BDADD6E3C7F21336C9A388965 /* Spring-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spring-umbrella.h"; sourceTree = "<group>"; };
+		FA9730B9EBF8E70836D1332890D7CFFA /* Pods-AnimationTabataTimer-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AnimationTabataTimer-resources.sh"; sourceTree = "<group>"; };
+		FF7788ED404BE7926018DED83D042E1A /* MBCircularProgressBarView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBCircularProgressBarView.h; path = Pod/Classes/MBCircularProgressBarView.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24474D2C0F81A1FC3D7A1F522311BA10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CEE8C95E5EC68B56B26415BA572384D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F38E7E8427EB97D15E0870D471F6DCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7F9C90CB21379663F26DDED7333A418 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0A6C9F0ED9CAA2DC657DAA8CBD5C6F4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF8AE384E5A1035841194ED221BBB836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDA0138BE60021F13000558525F0A77E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14B1C14AF02F5A1A143093C712A9B957 /* Pods-AnimationTabataTimer */ = {
+			isa = PBXGroup;
+			children = (
+				48C64A2264DEC2EA820189994DC855C6 /* Info.plist */,
+				50706BC29AFA37103BD3DBCBBBBEC7BA /* Pods-AnimationTabataTimer.modulemap */,
+				0442B8DDE55C7EFAD2D383A52159D4C7 /* Pods-AnimationTabataTimer-acknowledgements.markdown */,
+				D237FBA47A86D06CB0E82B189BD30BD7 /* Pods-AnimationTabataTimer-acknowledgements.plist */,
+				00EE2C46C01DA62C46480FE4D9E21003 /* Pods-AnimationTabataTimer-dummy.m */,
+				15A0E9226F376F26B69484D8E4155824 /* Pods-AnimationTabataTimer-frameworks.sh */,
+				FA9730B9EBF8E70836D1332890D7CFFA /* Pods-AnimationTabataTimer-resources.sh */,
+				108AF488E78D46659FA98AA9AAB409B2 /* Pods-AnimationTabataTimer-umbrella.h */,
+				81FB722EE97605070A896B41605AF1CB /* Pods-AnimationTabataTimer.debug.xcconfig */,
+				21EB819FF3DF6752A0B0DB8A60BFA7CF /* Pods-AnimationTabataTimer.release.xcconfig */,
+			);
+			name = "Pods-AnimationTabataTimer";
+			path = "Target Support Files/Pods-AnimationTabataTimer";
+			sourceTree = "<group>";
+		};
+		16542C2E17B991B76174EF7832EE153A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				90E55EDAF7E5DB3048055C5F8E220768 /* Info.plist */,
+				16D7D88070FBFD25B0EB48DCE841EB02 /* MBCircularProgressBar.modulemap */,
+				EA21DA498A5216857CBC46010A0A0D9C /* MBCircularProgressBar.xcconfig */,
+				8FCC33CD77518BC82B2D5D6B25874865 /* MBCircularProgressBar-dummy.m */,
+				7FAC767E3FF2F7EE43DF4E9E818548BE /* MBCircularProgressBar-prefix.pch */,
+				6FC7805BFD8D51188D9E9099E7D291E9 /* MBCircularProgressBar-umbrella.h */,
+				75F87B036479D948EC648B98FF48D325 /* ResourceBundle-MBCircularProgressBar-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MBCircularProgressBar";
+			sourceTree = "<group>";
+		};
+		2B53A93D45B2065C569254B4795CA301 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				14B1C14AF02F5A1A143093C712A9B957 /* Pods-AnimationTabataTimer */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2E73E3192A6204C34CE644A19A7CBF35 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6B1F42866E9EB1587A467DC93F7774B /* Info.plist */,
+				ADB31C6C919E5DA671A336421D73EE7F /* Spring.modulemap */,
+				B6A68530219F46D8C352D776307D70DC /* Spring.xcconfig */,
+				EC4FFD5F38C1570E52664B83C988727A /* Spring-dummy.m */,
+				BA518B4CC5693113B8BCCE9EF652CBE8 /* Spring-prefix.pch */,
+				EEA3140BDADD6E3C7F21336C9A388965 /* Spring-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Spring";
+			sourceTree = "<group>";
+		};
+		37F3DB1101FCFEC3B5E29AEDFDD6C32A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				497C1EDE61F97BA4085B1CFD046E77B8 /* MBCircularProgressBar */,
+				A9670B4D54FAEA543A0C56BCB2B9714B /* Spring */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		497C1EDE61F97BA4085B1CFD046E77B8 /* MBCircularProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				2C48C6300C4021517CDBB5A44CAEEF75 /* MBCircularProgressBarLayer.h */,
+				429D3ADD5A75BD393745B64695751A66 /* MBCircularProgressBarLayer.m */,
+				FF7788ED404BE7926018DED83D042E1A /* MBCircularProgressBarView.h */,
+				CB42B4BF7681D213DDC3659AEAA734D8 /* MBCircularProgressBarView.m */,
+				CB388DBA0DF99E5FFCA708D32ACAAE74 /* Resources */,
+				16542C2E17B991B76174EF7832EE153A /* Support Files */,
+			);
+			path = MBCircularProgressBar;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				37F3DB1101FCFEC3B5E29AEDFDD6C32A /* Pods */,
+				8D7254F39498FCDB3F295355FA506D40 /* Products */,
+				2B53A93D45B2065C569254B4795CA301 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8D7254F39498FCDB3F295355FA506D40 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A69DA255591F151E7D7D79DBB0ED33F /* MBCircularProgressBar.bundle */,
+				1835444DDDCBB63D46ED8DC87BEDCEB3 /* MBCircularProgressBar.framework */,
+				A13E2CB60D0FF0F5FDE13A6654161186 /* Pods_AnimationTabataTimer.framework */,
+				7D62026C827500762B52E8C918761321 /* Spring.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9670B4D54FAEA543A0C56BCB2B9714B /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				87BA34BA4AB595B78F1EFFC0399D7E46 /* AsyncButton.swift */,
+				A7C9918EF9117EAD3C02F3EA8E6D4CD9 /* AsyncImageView.swift */,
+				D577F19D4124532F76A6A9E22089F53B /* AutoTextView.swift */,
+				7A0C24460ECE17BD0317AEBA762D2095 /* BlurView.swift */,
+				41FD5CB2E3C8D528B177302D34C32720 /* DesignableButton.swift */,
+				70C1A17B797798EE7FD0B196F7CB68B4 /* DesignableImageView.swift */,
+				A6948BA0CEE99739F79893B6A27D96A0 /* DesignableLabel.swift */,
+				64B6C97FECE3C99365EB2F75A0F97AC4 /* DesignableTabBarController.swift */,
+				C2419A400A619DC76A86B2F1F89EE507 /* DesignableTextField.swift */,
+				C06F2EDF88CF5CB7816C660C466A7245 /* DesignableTextView.swift */,
+				18DB886DA6C183C7FF3EA37BE1EF3136 /* DesignableView.swift */,
+				053F4FCCDB8AB6A7B6440C09F8D4DA81 /* ImageLoader.swift */,
+				A138CE6E58E32F03586EDB74797F4646 /* KeyboardLayoutConstraint.swift */,
+				4CBEF1C3A6A6B46DDCEC5205E0679594 /* LoadingView.swift */,
+				3C135042730C919B0AAA0E3A52866405 /* Misc.swift */,
+				97523825FB220D40F6DB443B2B861C2A /* SoundPlayer.swift */,
+				AD9A15A4AFBB9BA5D1352E33130882B0 /* Spring.swift */,
+				BA80BD388210CAF7CE389F5F9DFDC118 /* SpringAnimation.swift */,
+				36D6D3D361050C4D3D3FD4530F116A47 /* SpringButton.swift */,
+				3A463C7AF14197883FFBDFDF9E8971EB /* SpringImageView.swift */,
+				ACC5A244A8B00C1AF7040B63E99A6B49 /* SpringLabel.swift */,
+				5E187552A7154BB847885F9FC1EC9F8C /* SpringTextField.swift */,
+				436D080107FB9F072CC06F599B496590 /* SpringTextView.swift */,
+				21A927BE53FDDAEF0F2D8D34D72C69AD /* SpringView.swift */,
+				32CD36468BD830711823CE21762F4F51 /* TransitionManager.swift */,
+				290F6EC376E855F885E72704A3222244 /* TransitionZoom.swift */,
+				5662A62846E36132D639153B087C7567 /* UnwindSegue.swift */,
+				ECF52C903BD194F7C7219B80C452B1E8 /* Resources */,
+				2E73E3192A6204C34CE644A19A7CBF35 /* Support Files */,
+			);
+			path = Spring;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB388DBA0DF99E5FFCA708D32ACAAE74 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C40F4E5D02DC27B1DA97DA58E3DC331 /* example.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		ECF52C903BD194F7C7219B80C452B1E8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7BBDCD98961C6B1B73E0ADF907B48DBE /* Images.xcassets */,
+				C12A8F7B4CE16A33EBB0D589BAE54F7C /* LoadingView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5739551C8041D088DE7864F0729ECB0A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B0B555A2A592577C142BBD67260EF4F /* Spring-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		877D12DCA1D25DE9E133F43962F27263 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6C6053C74B8C53E73B53E91C0B2DCB8 /* Pods-AnimationTabataTimer-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC15FA8882E81B15AA15A3554303B95C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8546F815857BF9C93440151A864EB626 /* MBCircularProgressBar-umbrella.h in Headers */,
+				2B95200755F4983D22E37C984284F956 /* MBCircularProgressBarLayer.h in Headers */,
+				EB70BEA373CD78800BE63150747CE860 /* MBCircularProgressBarView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3C000F4FC71E50E456EFF517D586E4B6 /* Pods-AnimationTabataTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AEC145FBA726DD45AA36DB2F30B5666F /* Build configuration list for PBXNativeTarget "Pods-AnimationTabataTimer" */;
+			buildPhases = (
+				011AB89F38DF840F1EB14B8341CEFEF8 /* Sources */,
+				C7F9C90CB21379663F26DDED7333A418 /* Frameworks */,
+				877D12DCA1D25DE9E133F43962F27263 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC4B28B7B19A18451394567986935316 /* PBXTargetDependency */,
+				07DBCD0615E9F2BBD574E5A13EF56E54 /* PBXTargetDependency */,
+			);
+			name = "Pods-AnimationTabataTimer";
+			productName = "Pods-AnimationTabataTimer";
+			productReference = A13E2CB60D0FF0F5FDE13A6654161186 /* Pods_AnimationTabataTimer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		462C07EF64042A66893DFB2CE987D061 /* Spring */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8CA5ADDD51D6FE20B9E2C5310916DA4 /* Build configuration list for PBXNativeTarget "Spring" */;
+			buildPhases = (
+				B94D0674457191279BA838CF8BAE9956 /* Sources */,
+				24474D2C0F81A1FC3D7A1F522311BA10 /* Frameworks */,
+				3B7F616752CE319CE925BBA451C3CCF5 /* Resources */,
+				5739551C8041D088DE7864F0729ECB0A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spring;
+			productName = Spring;
+			productReference = 7D62026C827500762B52E8C918761321 /* Spring.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		860A9179BCFD9F1C616D8653DB2B4F91 /* MBCircularProgressBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9292B5CEC4480FF9860A000BCCC4EA9D /* Build configuration list for PBXNativeTarget "MBCircularProgressBar" */;
+			buildPhases = (
+				0CED5ECE51A4C2D646CC75735EF1CBF0 /* Sources */,
+				CF8AE384E5A1035841194ED221BBB836 /* Frameworks */,
+				479C1B74FA4C4674AC58A0CBDC217DC8 /* Resources */,
+				EC15FA8882E81B15AA15A3554303B95C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				91C55659061E9F3551A2E1576571AA74 /* PBXTargetDependency */,
+			);
+			name = MBCircularProgressBar;
+			productName = MBCircularProgressBar;
+			productReference = 1835444DDDCBB63D46ED8DC87BEDCEB3 /* MBCircularProgressBar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8FC4B2785BB68892651401B8A26A15AD /* MBCircularProgressBar-MBCircularProgressBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDC2C33DCA9AB372723E14560E873705 /* Build configuration list for PBXNativeTarget "MBCircularProgressBar-MBCircularProgressBar" */;
+			buildPhases = (
+				A733E3C23F3D8D660A96DF919F3EB865 /* Sources */,
+				7F38E7E8427EB97D15E0870D471F6DCE /* Frameworks */,
+				14D3D634BF2815FCBB0CD97F0A79023A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MBCircularProgressBar-MBCircularProgressBar";
+			productName = "MBCircularProgressBar-MBCircularProgressBar";
+			productReference = 0A69DA255591F151E7D7D79DBB0ED33F /* MBCircularProgressBar.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 8D7254F39498FCDB3F295355FA506D40 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				860A9179BCFD9F1C616D8653DB2B4F91 /* MBCircularProgressBar */,
+				8FC4B2785BB68892651401B8A26A15AD /* MBCircularProgressBar-MBCircularProgressBar */,
+				3C000F4FC71E50E456EFF517D586E4B6 /* Pods-AnimationTabataTimer */,
+				462C07EF64042A66893DFB2CE987D061 /* Spring */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14D3D634BF2815FCBB0CD97F0A79023A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CB298DAAA66B239E79A77582A242D61 /* example.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B7F616752CE319CE925BBA451C3CCF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A508C85004C9EB43BBDDB25EFAF9EC22 /* Images.xcassets in Resources */,
+				F12AC16EC614C1BC6B849A6FA894FF6C /* LoadingView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		479C1B74FA4C4674AC58A0CBDC217DC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F88D157974522F8674E5DFA82F8B0A2A /* MBCircularProgressBar.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		011AB89F38DF840F1EB14B8341CEFEF8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A29F5C2165DC18C405F9BE28F8BDE26 /* Pods-AnimationTabataTimer-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0CED5ECE51A4C2D646CC75735EF1CBF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				86C96CE9BF21B8D10756F22C071EFBC5 /* MBCircularProgressBar-dummy.m in Sources */,
+				E912798811F25351DFFFCFEF1B153B2A /* MBCircularProgressBarLayer.m in Sources */,
+				6447B5362DD395075EB2433CEE8C21D4 /* MBCircularProgressBarView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A733E3C23F3D8D660A96DF919F3EB865 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B94D0674457191279BA838CF8BAE9956 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				704D679256BAC0A7C0978D094AF379B2 /* AsyncButton.swift in Sources */,
+				3D034550634265745F8126DCD48D98F8 /* AsyncImageView.swift in Sources */,
+				79931A6F0515A71444E6A90D0906A919 /* AutoTextView.swift in Sources */,
+				4DEDFA59E2C9A6F7A1069205C5D43D49 /* BlurView.swift in Sources */,
+				334FE7BC11CFFB10DD14797B140B0AE3 /* DesignableButton.swift in Sources */,
+				84E54715BF7C414988FE4338F5CD2F45 /* DesignableImageView.swift in Sources */,
+				F187199FAB67557AAB347A6A628C9A18 /* DesignableLabel.swift in Sources */,
+				3DB46BF3C335C15BDA9B52C9C81AB692 /* DesignableTabBarController.swift in Sources */,
+				BE7E4CDA7951F4AB3B42CBA3E16D2570 /* DesignableTextField.swift in Sources */,
+				32929D3FEC900F640EE6F4200A7C14FB /* DesignableTextView.swift in Sources */,
+				321F06C1704CC87309FD84DC091E94FD /* DesignableView.swift in Sources */,
+				7B5440AFD90A172B8D25E8E93E27A04E /* ImageLoader.swift in Sources */,
+				E0475FE7B1C11E80681E5EF85ADB9F2D /* KeyboardLayoutConstraint.swift in Sources */,
+				2C8623FE6C6AFA83EF5458E0BF3E196F /* LoadingView.swift in Sources */,
+				52258F7266BCA6FBEC5CB46101805F08 /* Misc.swift in Sources */,
+				97E47FC1AC66E9B796B66DD6FBE9643F /* SoundPlayer.swift in Sources */,
+				B58DE308BEC09BFB9B0B3A7BB9470041 /* Spring-dummy.m in Sources */,
+				0C3FEBF874BF7D0C28753E9EA0B94238 /* Spring.swift in Sources */,
+				BF7C0A2FFD6E4339A8507192575185C8 /* SpringAnimation.swift in Sources */,
+				DF3CE35A681808932928610E4864C382 /* SpringButton.swift in Sources */,
+				EF6F02487758B4CB4890D4AE07F203AF /* SpringImageView.swift in Sources */,
+				A4A61138B04941895A041A0621F5A2F4 /* SpringLabel.swift in Sources */,
+				3FD1A2BE67FAAF56145D19AEA1A5C852 /* SpringTextField.swift in Sources */,
+				97203245E90EE06AD4F70ED07C10C178 /* SpringTextView.swift in Sources */,
+				70936F0EF31B2C3632B5890AB19C96E5 /* SpringView.swift in Sources */,
+				B52F14A8938616048811AC3B36D780D4 /* TransitionManager.swift in Sources */,
+				5D3AD83F0732C7B913552A0D6C73F79B /* TransitionZoom.swift in Sources */,
+				6814D919A790A76E79A64BA3B3754560 /* UnwindSegue.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07DBCD0615E9F2BBD574E5A13EF56E54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Spring;
+			target = 462C07EF64042A66893DFB2CE987D061 /* Spring */;
+			targetProxy = 9E7E5B311D0A3155AD9DBBECF50A394C /* PBXContainerItemProxy */;
+		};
+		91C55659061E9F3551A2E1576571AA74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MBCircularProgressBar-MBCircularProgressBar";
+			target = 8FC4B2785BB68892651401B8A26A15AD /* MBCircularProgressBar-MBCircularProgressBar */;
+			targetProxy = EBC59F00882F35808CD4B15930E9008E /* PBXContainerItemProxy */;
+		};
+		AC4B28B7B19A18451394567986935316 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MBCircularProgressBar;
+			target = 860A9179BCFD9F1C616D8653DB2B4F91 /* MBCircularProgressBar */;
+			targetProxy = 810D769971DA4474447E02BA1D902735 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12914D756594D15C6F2CA12FE5F89F1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		1EE723F5C94A16D92AD455B08E5719CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA21DA498A5216857CBC46010A0A0D9C /* MBCircularProgressBar.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MBCircularProgressBar/MBCircularProgressBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MBCircularProgressBar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MBCircularProgressBar/MBCircularProgressBar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MBCircularProgressBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4310EBE0865EA524CEFF9BBBC4BDC85C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81FB722EE97605070A896B41605AF1CB /* Pods-AnimationTabataTimer.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AnimationTabataTimer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AnimationTabataTimer/Pods-AnimationTabataTimer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AnimationTabataTimer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		802A8A813E76899C380617CD1E8CDD79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6A68530219F46D8C352D776307D70DC /* Spring.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spring/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Spring;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9DFA2790C5F16BDAF8123061320836EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA21DA498A5216857CBC46010A0A0D9C /* MBCircularProgressBar.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MBCircularProgressBar/MBCircularProgressBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MBCircularProgressBar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MBCircularProgressBar/MBCircularProgressBar.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = MBCircularProgressBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B491F07944209D577C06071FD66C9DBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA21DA498A5216857CBC46010A0A0D9C /* MBCircularProgressBar.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MBCircularProgressBar";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/MBCircularProgressBar/ResourceBundle-MBCircularProgressBar-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = MBCircularProgressBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		D90E19EF9D2C42E8A5B678A447F43916 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6A68530219F46D8C352D776307D70DC /* Spring.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Spring/Spring-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spring/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Spring/Spring.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Spring;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E72E7977875C2D251FC62736BBDDC389 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EA4A63AEFAB344B487789D66AD4F9B91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA21DA498A5216857CBC46010A0A0D9C /* MBCircularProgressBar.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MBCircularProgressBar";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/MBCircularProgressBar/ResourceBundle-MBCircularProgressBar-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = MBCircularProgressBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		F8F955BB28F3D6ED0DCA5592BE5ECDA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21EB819FF3DF6752A0B0DB8A60BFA7CF /* Pods-AnimationTabataTimer.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AnimationTabataTimer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AnimationTabataTimer/Pods-AnimationTabataTimer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AnimationTabataTimer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12914D756594D15C6F2CA12FE5F89F1B /* Debug */,
+				E72E7977875C2D251FC62736BBDDC389 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9292B5CEC4480FF9860A000BCCC4EA9D /* Build configuration list for PBXNativeTarget "MBCircularProgressBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DFA2790C5F16BDAF8123061320836EB /* Debug */,
+				1EE723F5C94A16D92AD455B08E5719CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AEC145FBA726DD45AA36DB2F30B5666F /* Build configuration list for PBXNativeTarget "Pods-AnimationTabataTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4310EBE0865EA524CEFF9BBBC4BDC85C /* Debug */,
+				F8F955BB28F3D6ED0DCA5592BE5ECDA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8CA5ADDD51D6FE20B9E2C5310916DA4 /* Build configuration list for PBXNativeTarget "Spring" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D90E19EF9D2C42E8A5B678A447F43916 /* Debug */,
+				802A8A813E76899C380617CD1E8CDD79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDC2C33DCA9AB372723E14560E873705 /* Build configuration list for PBXNativeTarget "MBCircularProgressBar-MBCircularProgressBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B491F07944209D577C06071FD66C9DBC /* Debug */,
+				EA4A63AEFAB344B487789D66AD4F9B91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
