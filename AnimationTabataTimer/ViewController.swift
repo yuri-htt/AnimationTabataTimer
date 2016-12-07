@@ -270,5 +270,26 @@ struct Color {
     let orange:UIColor = Formatter().colorWithHexString(hex: "F39019", Alpha: 1.0)
 }
 
-
+class Formatter {
+    //hex:16進数
+    func colorWithHexString(hex:String, Alpha:CGFloat) -> UIColor {
+        
+        let hexString:String = hex.trimmingCharacters(in:CharacterSet.whitespacesAndNewlines).uppercased()
+        let redString:String = hexString.substring(with: NSRange(location: 0, length: 2))
+        let greenString:String = (hexString as NSString).substring(with: NSRange(location: 2, length: 2))
+        let blueString:String = (hexString as NSString).substring(with: NSRange(location: 4, length: 2))
+        
+        var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
+        Scanner(string: rString).scanHexInt32(&r)
+        Scanner(string: gString).scanHexInt32(&g)
+        Scanner(string: bString).scanHexInt32(&b)
+        
+        return UIColor(
+            red: CGFloat(Float(r) / 255.0),
+            green: CGFloat(Float(g) / 255.0),
+            blue: CGFloat(Float(b) / 255.0),
+            alpha: CGFloat( Alpha )
+        )
+    }
+}
 
