@@ -49,8 +49,8 @@ class ViewController: UIViewController {
         
         graphInit()
         resetAll()
-        
         setUpTimer()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -157,17 +157,15 @@ class ViewController: UIViewController {
         totalGraph.emptyLineColor = UIColor.gray
         
         /*Graph position*/
-        //
-        //
         
     }
     
     func resetAll() {
-        
+        //処理
     }
     
     func setUpTimer() {
-        
+        //処理
     }
     
     @IBAction func startTimer(_ sender: AnyObject) {
