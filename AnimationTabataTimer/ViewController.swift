@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     var musicPlayer          = MPMusicPlayerController()
     var status      :Int     = Status().prepare
     var currentTime :CGFloat = 0
-    var pauseFlg    :Bool    = true
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -161,7 +160,7 @@ class ViewController: UIViewController {
         totalGraph.emptyLineColor = UIColor.gray
         
         /*Position*/
-        //センターからの距離???
+        //ここらへん全部わからん
         let radius:CGFloat = baseTurnView.layer.bounds.width/3
 
         let workOutRadian:CGFloat = -30 * CGFloat(M_PI) / 180
@@ -193,6 +192,8 @@ class ViewController: UIViewController {
         currentTime = -1
         status = Status().prepare
         pauseFlg = false
+        
+        //TODO:ここから
     }
     
     func setUpTimer() {
