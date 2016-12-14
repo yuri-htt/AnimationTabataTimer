@@ -272,21 +272,24 @@ class Formatter {
     //hex:16進数
     func colorWithHexString (hex:String, Alpha:CGFloat) -> UIColor {
         
+        //削除する文字の集合(空白と改行)を指定し、大文字に
         let hexString:String = hex.trimmingCharacters(in:CharacterSet.whitespacesAndNewlines).uppercased()
         
         let redString:String = (hexString as NSString).substring(with: NSRange(location: 0, length: 2))
-        let greenString:String = hexString.substring(with: NSRange(location: 2, length: 2))
-        let blueString:String = hexString.substring(with: NSRange(location: 4, length: 2))
+        let greenString:String = (hexString as NSString).substring(with: NSRange(location: 2, length: 2))
+        let blueString:String = (hexString as NSString).substring(with: NSRange(location: 4, length: 2))
         
-        var r:CUnsignedInt = 0, g:CUnsignedInt = 0, b:CUnsignedInt = 0;
-        Scanner(string: rString).scanHexInt32(&r)
-        Scanner(string: gString).scanHexInt32(&g)
-        Scanner(string: bString).scanHexInt32(&b)
+        var red:CUnsignedInt = 0, green:CUnsignedInt = 0, blue:CUnsignedInt = 0
+        //渡されたStringをスキャンして16進数に変換,変数
+        //関数の引数に呼び出し元からの変数を渡して、関数内でその引数の値を変更して返すのにはinoutを使う。引数として渡す変数には”&”を前につける。
+        Scanner(string: redString).scanHexInt32(&red)
+        Scanner(string: greenString).scanHexInt32(&green)
+        Scanner(string: blueString).scanHexInt32(&blue)
         
         return UIColor(
-            red: CGFloat(Float(r) / 255.0),
-            green: CGFloat(Float(g) / 255.0),
-            blue: CGFloat(Float(b) / 255.0),
+            red: CGFloat(Float(red) / 255.0),
+            green: CGFloat(Float(green) / 255.0),
+            blue: CGFloat(Float(blue) / 255.0),
             alpha: CGFloat( Alpha )
         )
     }
