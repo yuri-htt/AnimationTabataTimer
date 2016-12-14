@@ -60,6 +60,7 @@ class ViewController: UIViewController {
     
     func graphInit() {
         
+        /*Size*/
         baseTurnView.frame.size = CGSize(width: UIScreen.main.bounds.size.height * 0.55, height: UIScreen.main.bounds.size.height * 0.55 )
         baseTurnView.center.x = self.view.center.x
         
@@ -75,7 +76,7 @@ class ViewController: UIViewController {
         setGraph.frame.size = CGSize(width: 60, height: 60)
         titleLabel.center.x = self.view.center.x
         
-        /*Graph layout*/
+        /*layout*/
         prepareGraph.tag = 1
         prepareGraph.value = ceil(Settings().workOutTime)
         prepareGraph.maxValue = Settings().workOutTime
@@ -87,10 +88,10 @@ class ViewController: UIViewController {
         prepareGraph.unitFontSize = 20
         prepareGraph.progressCapType = 0
         prepareGraph.progressRotationAngle = 0
-//        prepareGraph.fontColor = Color().fontColor
-//        prepareGraph.progressColor = Color().red
-//        prepareGraph.progressStrokeColor = Color().red
-//        prepareGraph.emptyLineColor = Color().gray
+        prepareGraph.fontColor = Color().fontColor
+        prepareGraph.progressColor = Color().red
+        prepareGraph.progressStrokeColor = Color().red
+        prepareGraph.emptyLineColor = UIColor.gray
         
         restGraph.tag = 2
         restGraph.value = ceil(Settings().restTime)
@@ -103,10 +104,10 @@ class ViewController: UIViewController {
         restGraph.unitFontSize = 20
         restGraph.progressCapType = 0
         restGraph.progressRotationAngle = 0
-//        restGraph.fontColor = Color().fontColor
-//        restGraph.progressColor = Color().blue
-//        restGraph.progressStrokeColor = Color().blue
-//        restGraph.emptyLineColor = Color().gray
+        restGraph.fontColor = Color().fontColor
+        restGraph.progressColor = Color().blue
+        restGraph.progressStrokeColor = Color().blue
+        restGraph.emptyLineColor = UIColor.gray
         
         workOutGraph.tag = 3
         workOutGraph.value = ceil(Settings().restTime)
@@ -119,10 +120,10 @@ class ViewController: UIViewController {
         workOutGraph.unitFontSize = 20
         workOutGraph.progressCapType = 0
         workOutGraph.progressRotationAngle = 0
-//        workOutGraph.fontColor = Color().fontColor
-//        workOutGraph.progressColor = Color().yellow
-//        workOutGraph.progressStrokeColor = Color().yellow
-//        workOutGraph.emptyLineColor = Color().gray
+        workOutGraph.fontColor = Color().fontColor
+        workOutGraph.progressColor = Color().yellow
+        workOutGraph.progressStrokeColor = Color().yellow
+        workOutGraph.emptyLineColor = UIColor.gray
         
         setGraph.tag = 4
         setGraph.value = ceil( CGFloat(Settings().setCounter))
@@ -130,14 +131,14 @@ class ViewController: UIViewController {
         setGraph.valueFontSize = 20
         setGraph.progressAngle = 100
         setGraph.progressLineWidth = 2
-        setGraph.unitString = ""//Design().unitString
+        setGraph.unitString = DisplayString().unit
         setGraph.emptyLineWidth = 2
         setGraph.unitFontSize = 10
         setGraph.progressCapType = 0
         setGraph.progressRotationAngle = 0
-//        setGraph.fontColor = Color().fontColor
-//        setGraph.progressColor = Color().orange
-//        setGraph.progressStrokeColor = Color().orange
+        setGraph.fontColor = Color().fontColor
+        setGraph.progressColor = Color().orange
+        setGraph.progressStrokeColor = Color().orange
         setGraph.emptyLineColor = UIColor.gray
         
         totalGraph.tag = 5
@@ -146,17 +147,42 @@ class ViewController: UIViewController {
         totalGraph.valueFontSize = 20
         totalGraph.progressAngle = 100
         totalGraph.progressLineWidth = 2
-        totalGraph.unitString = ""//Design().unitString
+        totalGraph.unitString = DisplayString().unit
         totalGraph.emptyLineWidth = 2
         totalGraph.unitFontSize = 10
         totalGraph.progressCapType = 0
         totalGraph.progressRotationAngle = 0
-//        totalGraph.fontColor = Color().fontColor
-//        totalGraph.progressColor = Color().orange
-//        totalGraph.progressStrokeColor = Color().orange
+        totalGraph.fontColor = Color().fontColor
+        totalGraph.progressColor = Color().orange
+        totalGraph.progressStrokeColor = Color().orange
         totalGraph.emptyLineColor = UIColor.gray
         
-        /*Graph position*/
+        /*Position*/
+        //センターからの距離???
+        let radius:CGFloat = baseTurnView.layer.bounds.width/3
+
+        let workOutRadian:CGFloat = -30 * CGFloat(M_PI) / 180
+        let workOutX = cos(workOutRadian) * radius
+        let workOutY = sin(workOutRadian) * radius
+        workOutAnimView.layer.position = CGPoint(
+            x: baseTurnView.bounds.width / 2 + workOutX,
+            y: baseTurnView.bounds.height / 2 + workOutY)
+        
+        let prepareRadian:CGFloat = -270 * CGFloat(M_PI) / 180
+        let prepareX = cos(prepareRadian) * radius
+        let prepareY = sin(prepareRadian) * radius
+        prepareAnimView.layer.position = CGPoint(
+            x: baseTurnView.bounds.width / 2 + prepareX,
+            y: baseTurnView.bounds.height / 2 + prepareY)
+        
+        
+        //Ranimのポジション
+        let restRadian = -150 * CGFloat(M_PI) / 180
+        let restX = cos(restRadian) * radius
+        let restY = sin(restRadian) * radius
+        restAnimView.layer.position = CGPoint(
+            x: baseTurnView.bounds.width / 2 + restX,
+            y: baseTurnView.bounds.height / 2 + restY)
         
     }
     
@@ -281,7 +307,7 @@ class Formatter {
         
         var red:CUnsignedInt = 0, green:CUnsignedInt = 0, blue:CUnsignedInt = 0
         //渡されたStringをスキャンして16進数に変換,変数
-        //関数の引数に呼び出し元からの変数を渡して、関数内でその引数の値を変更して返すのにはinoutを使う。引数として渡す変数には”&”を前につける。
+        //ここが参照渡しな理由がわからん
         Scanner(string: redString).scanHexInt32(&red)
         Scanner(string: greenString).scanHexInt32(&green)
         Scanner(string: blueString).scanHexInt32(&blue)
