@@ -175,8 +175,6 @@ class ViewController: UIViewController {
             x: baseTurnView.bounds.width / 2 + prepareX,
             y: baseTurnView.bounds.height / 2 + prepareY)
         
-        
-        //Ranimのポジション
         let restRadian = -150 * CGFloat(M_PI) / 180
         let restX = cos(restRadian) * radius
         let restY = sin(restRadian) * radius
