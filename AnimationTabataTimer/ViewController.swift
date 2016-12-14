@@ -15,12 +15,14 @@ import MediaPlayer
 
 class ViewController: UIViewController {
     
-    let talker = AVSpeechSynthesizer()
-    var timer = Timer()
-    var angleHolder:CGFloat = 0
-    var pauseFlg = false
-    var musicPlayer = MPMusicPlayerController()
-    var status = Status().prepare
+    let talker               = AVSpeechSynthesizer()
+    var timer       :Timer   = Timer()
+    var angleHolder :CGFloat = 0
+    var pauseFlg    :Bool    = false
+    var musicPlayer          = MPMusicPlayerController()
+    var status      :Int     = Status().prepare
+    var currentTime :CGFloat = 0
+    var pauseFlg    :Bool    = true
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -58,6 +60,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //グラフのサイズ/レイアウト/ポジションの設定
     func graphInit() {
         
         /*Size*/
@@ -185,7 +188,11 @@ class ViewController: UIViewController {
     }
     
     func resetAll() {
-        //処理
+        
+        //なぜ-1?
+        currentTime = -1
+        status = Status().prepare
+        pauseFlg = false
     }
     
     func setUpTimer() {
