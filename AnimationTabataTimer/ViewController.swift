@@ -83,14 +83,14 @@ class ViewController: UIViewController {
         prepareGraph.progressAngle = 100
         prepareGraph.progressLineWidth = 4
         prepareGraph.emptyLineWidth = 4
-        prepareGraph.unitString = String().unit
+        prepareGraph.unitString = DisplayString().unit
         prepareGraph.unitFontSize = 20
         prepareGraph.progressCapType = 0
         prepareGraph.progressRotationAngle = 0
-        prepareGraph.fontColor = Color().fontColor
-        prepareGraph.progressColor = Color().red
-        prepareGraph.progressStrokeColor = Color().red
-        prepareGraph.emptyLineColor = Color().gray
+//        prepareGraph.fontColor = Color().fontColor
+//        prepareGraph.progressColor = Color().red
+//        prepareGraph.progressStrokeColor = Color().red
+//        prepareGraph.emptyLineColor = Color().gray
         
         restGraph.tag = 2
         restGraph.value = ceil(Settings().restTime)
@@ -99,14 +99,14 @@ class ViewController: UIViewController {
         restGraph.progressAngle = 100
         restGraph.progressLineWidth = 4
         restGraph.emptyLineWidth = 4
-        restGraph.unitString = String().unit
+        restGraph.unitString = DisplayString().unit
         restGraph.unitFontSize = 20
         restGraph.progressCapType = 0
         restGraph.progressRotationAngle = 0
-        restGraph.fontColor = Color().fontColor
-        restGraph.progressColor = Color().blue
-        restGraph.progressStrokeColor = Color().blue
-        restGraph.emptyLineColor = Color().gray
+//        restGraph.fontColor = Color().fontColor
+//        restGraph.progressColor = Color().blue
+//        restGraph.progressStrokeColor = Color().blue
+//        restGraph.emptyLineColor = Color().gray
         
         workOutGraph.tag = 3
         workOutGraph.value = ceil(Settings().restTime)
@@ -115,14 +115,14 @@ class ViewController: UIViewController {
         workOutGraph.progressAngle = 100
         workOutGraph.progressLineWidth = 4
         workOutGraph.emptyLineWidth = 4
-        workOutGraph.unitString = String().unit
+        workOutGraph.unitString = DisplayString().unit
         workOutGraph.unitFontSize = 20
         workOutGraph.progressCapType = 0
         workOutGraph.progressRotationAngle = 0
-        workOutGraph.fontColor = Color().fontColor
-        workOutGraph.progressColor = Color().yellow
-        workOutGraph.progressStrokeColor = Color().yellow
-        workOutGraph.emptyLineColor = Color().gray
+//        workOutGraph.fontColor = Color().fontColor
+//        workOutGraph.progressColor = Color().yellow
+//        workOutGraph.progressStrokeColor = Color().yellow
+//        workOutGraph.emptyLineColor = Color().gray
         
         setGraph.tag = 4
         setGraph.value = ceil( CGFloat(Settings().setCounter))
@@ -135,9 +135,9 @@ class ViewController: UIViewController {
         setGraph.unitFontSize = 10
         setGraph.progressCapType = 0
         setGraph.progressRotationAngle = 0
-        setGraph.fontColor = Color().fontColor
-        setGraph.progressColor = Color().orange
-        setGraph.progressStrokeColor = Color().orange
+//        setGraph.fontColor = Color().fontColor
+//        setGraph.progressColor = Color().orange
+//        setGraph.progressStrokeColor = Color().orange
         setGraph.emptyLineColor = UIColor.gray
         
         totalGraph.tag = 5
@@ -151,9 +151,9 @@ class ViewController: UIViewController {
         totalGraph.unitFontSize = 10
         totalGraph.progressCapType = 0
         totalGraph.progressRotationAngle = 0
-        totalGraph.fontColor = Color().fontColor
-        totalGraph.progressColor = Color().orange
-        totalGraph.progressStrokeColor = Color().orange
+//        totalGraph.fontColor = Color().fontColor
+//        totalGraph.progressColor = Color().orange
+//        totalGraph.progressStrokeColor = Color().orange
         totalGraph.emptyLineColor = UIColor.gray
         
         /*Graph position*/
@@ -255,7 +255,7 @@ struct Settings {
     }
 }
 
-struct String {
+struct DisplayString {
     var unit = "Sec"
 }
 
@@ -270,10 +270,11 @@ struct Color {
 
 class Formatter {
     //hex:16進数
-    func colorWithHexString(hex:String, Alpha:CGFloat) -> UIColor {
+    func colorWithHexString (hex:String, Alpha:CGFloat) -> UIColor {
         
         let hexString:String = hex.trimmingCharacters(in:CharacterSet.whitespacesAndNewlines).uppercased()
-        let redString:String = hexString.substring(with: NSRange(location: 0, length: 2))
+        
+        let redString:String = (hexString as NSString).substring(with: NSRange(location: 0, length: 2))
         let greenString:String = hexString.substring(with: NSRange(location: 2, length: 2))
         let blueString:String = hexString.substring(with: NSRange(location: 4, length: 2))
         
