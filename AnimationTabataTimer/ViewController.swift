@@ -15,13 +15,17 @@ import MediaPlayer
 
 class ViewController: UIViewController {
     
-    let talker               = AVSpeechSynthesizer()
-    var timer       :Timer   = Timer()
-    var angleHolder :CGFloat = 0
-    var pauseFlg    :Bool    = false
-    var musicPlayer          = MPMusicPlayerController()
-    var status      :Int     = Status().prepare
-    var currentTime :CGFloat = 0
+    let talker                 = AVSpeechSynthesizer()
+    var timer       :Timer     = Timer()
+    var angleHolder :CGFloat   = 0
+    var pauseFlg    :Bool      = false
+    var musicPlayer            = MPMusicPlayerController()
+    var status      :Int       = Status().prepare
+    var currentTime :CGFloat   = 0
+    var prepareCouter :CGFloat = 0
+    var workOutCounter:CGFloat = 0
+    var restCounter   :CGFloat = 0
+    
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -186,6 +190,7 @@ class ViewController: UIViewController {
         
     }
     
+    //カウンターの数値＆グラフの位置の初期化/ボタン
     func resetAll() {
         
         //なぜ-1?
@@ -193,7 +198,23 @@ class ViewController: UIViewController {
         status = Status().prepare
         pauseFlg = false
         
-        //TODO:ここから
+        titleLabel.text = TitleText().title
+        titleLabel.textColor = UIColor.darkGray
+        
+        prepareCouter = Settings().prepareTime
+        workOutCounter = Settings().workOutTime
+        restCounter = Settings().restTime
+        
+        angleHolder = 0
+        turnBaseView(ang: angleHolder)
+        turnTimerView(subview: prepareGraph, ang: -angleHolder, scale: Scale().comeFront)
+        turnTimerView(subview: workOutGraph, ang: -angleHolder, scale: Scale().goBack)
+        turnTimerView(subview: restGraph, ang: -angleHolder, scale: Scale().goBack)
+        
+        stopButton.isHidden = true
+        pauseButton.isHidden = true
+        startButton.isHidden = false
+        
     }
     
     func setUpTimer() {
@@ -263,8 +284,8 @@ struct Duration {
 }
 
 struct Scale {
-    let comeFront = 1.0
-    let goBack = 0.5
+    let comeFront:CGFloat = 1.0
+    let goBack:CGFloat = 0.5
 }
 
 struct Status {
@@ -287,6 +308,9 @@ struct Settings {
     }
 }
 
+struct TitleText {
+    var title = "TABATA TIMER"
+}
 struct DisplayString {
     var unit = "Sec"
 }
