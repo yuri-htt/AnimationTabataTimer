@@ -52,9 +52,12 @@ class ViewController: UIViewController {
         musicPlayer = MPMusicPlayerController.applicationMusicPlayer()
         musicPlayer.beginGeneratingPlaybackNotifications()
         
-        graphInit()
+        //グラフのレイアウトを設定
+        setupGraph()
+        //カウンターの数値を初期化
         resetAll()
-        setUpTimer()
+        //カウンターの数値をカスタマイズ用
+        setupPicker()
         
     }
     
@@ -64,7 +67,7 @@ class ViewController: UIViewController {
     }
     
     //グラフのサイズ/レイアウト/ポジションの設定
-    func graphInit() {
+    func setupGraph() {
         
         /*Size*/
         baseTurnView.frame.size = CGSize(width: UIScreen.main.bounds.size.height * 0.55, height: UIScreen.main.bounds.size.height * 0.55 )
@@ -217,6 +220,10 @@ class ViewController: UIViewController {
         
     }
     
+    //グラフのカウンターをカスタマイズする時に使用するpicker
+    func setupPicker() {
+        
+    }
     func setUpTimer() {
         //処理
     }
