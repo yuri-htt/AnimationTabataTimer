@@ -13,6 +13,7 @@
 		DA1B08481DF655C700194335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1B08461DF655C700194335 /* Main.storyboard */; };
 		DA1B084A1DF655C700194335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA1B08491DF655C700194335 /* Assets.xcassets */; };
 		DA1B084D1DF655C700194335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA1B084B1DF655C700194335 /* LaunchScreen.storyboard */; };
+		DA229A0C1E02FCCD002EA999 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA229A0B1E02FCCD002EA999 /* Struct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		DA1B08491DF655C700194335 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA1B084C1DF655C700194335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA1B084E1DF655C700194335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA229A0B1E02FCCD002EA999 /* Struct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 		EB03E71D07CFB500643C910A /* Pods_AnimationTabataTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimationTabataTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				DA1B08491DF655C700194335 /* Assets.xcassets */,
 				DA1B084B1DF655C700194335 /* LaunchScreen.storyboard */,
 				DA1B084E1DF655C700194335 /* Info.plist */,
+				DA229A0B1E02FCCD002EA999 /* Struct.swift */,
 			);
 			path = AnimationTabataTimer;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA229A0C1E02FCCD002EA999 /* Struct.swift in Sources */,
 				DA1B08451DF655C700194335 /* ViewController.swift in Sources */,
 				DA1B08431DF655C700194335 /* AppDelegate.swift in Sources */,
 			);
