@@ -9,9 +9,9 @@
 import UIKit
 
 struct Duration {
-    let TimerUpdateDuration = 1.0
-    let prepareAnimDuration = 1.0
-    let startTitleDuration = 1.0
+    let TimerUpdateDuration:CGFloat = 1.0
+    let prepareAnimDuration:CGFloat = 1.0
+    let startTitleDuration :CGFloat = 1.0
 }
 
 struct Scale {

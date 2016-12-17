@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     var restCounter   :CGFloat = 0
     
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: SpringLabel!
     
     @IBOutlet weak var baseTurnView: UIView!
     
@@ -260,9 +260,9 @@ class ViewController: UIViewController {
             
             titleLabel.text = "READY"
             titleLabel.textColor = UIColor.yellow
-//            titleLabel.animation = "fadeInLeft"
-//            titleLabel.duration = Duration.startTitleDuration
-//            titleLabel.animate()
+            titleLabel.animation = "fadeInLeft"
+            titleLabel.duration = CGFloat(Duration().startTitleDuration)
+            titleLabel.animate()
             
         } else {
             
