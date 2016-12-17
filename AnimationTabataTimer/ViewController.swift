@@ -288,8 +288,27 @@ class ViewController: UIViewController {
             
         }
         
+    }
+    
+    @IBAction func didPressStopButton(_ sender: AnyObject) {
+        
+        timer.invalidate()
+        resetAll()
+        
+        prepareAnimView.animation = "pop"
+        prepareAnimView.duration = 1.0
+        prepareAnimView.animate()
+        workOutAnimView.animation = "pop"
+        workOutAnimView.duration = 1.0
+        workOutAnimView.animate()
+        restAnimView.animation = "pop"
+        restAnimView.duration = 1.0
+        restAnimView.animate()
+        
+        startButton.isHidden = false
         
     }
+    
     
     
     func onUpdate(timer:Timer) {
