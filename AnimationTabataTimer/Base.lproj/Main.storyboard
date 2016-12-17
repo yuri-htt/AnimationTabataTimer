@@ -37,11 +37,17 @@
                                 <frame key="frameInset" minX="157" minY="583" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="Play"/>
+                                <connections>
+                                    <action selector="didPressStartButton:" destination="pLk-Qu-pWI" eventType="touchUpInside" id="Roz-Xf-vWh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYN-O1-rig">
                                 <frame key="frameInset" minX="95" minY="589" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="Pause"/>
+                                <connections>
+                                    <action selector="didPressPuaseButton:" destination="pLk-Qu-pWI" eventType="touchUpInside" id="Uqu-xm-71i"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGt-cW-Loz">
                                 <frame key="frameInset" minX="243" minY="583" width="50" height="50"/>

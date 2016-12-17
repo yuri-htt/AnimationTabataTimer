@@ -41,6 +41,7 @@ struct Settings {
 
 struct TitleText {
     var title = "TABATA TIMER"
+    var ready = "READY"
 }
 
 struct DisplayString {

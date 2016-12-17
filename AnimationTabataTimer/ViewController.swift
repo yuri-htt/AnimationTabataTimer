@@ -229,7 +229,7 @@ class ViewController: UIViewController {
     
     // MARK: - Button action
     
-    @IBAction func startTimer(_ sender: AnyObject) {
+    @IBAction func didPressStartButton(_ sender: AnyObject) {
         
         //【AVSpeechUtterance】
         // - iOS7で追加された音声読み上げライブラリ
@@ -258,17 +258,39 @@ class ViewController: UIViewController {
         if !pauseFlg {
             status = Status().prepare
             
-            titleLabel.text = "READY"
+            titleLabel.text = TitleText().ready
             titleLabel.textColor = UIColor.yellow
             titleLabel.animation = "fadeInLeft"
             titleLabel.duration = CGFloat(Duration().startTitleDuration)
             titleLabel.animate()
             
         } else {
-            
+            //特に処理なし
         }
         
     }
+    
+    @IBAction func didPressPuaseButton(_ sender: AnyObject) {
+        
+        if pauseFlg {
+            
+            //タイマーを破棄
+            timer.invalidate()
+            pauseFlg = false
+            pauseButton.setImage(UIImage(named:"PauseStart"), for: UIControlState.normal)
+            
+        } else {
+            
+            timer = Timer.scheduledTimer(timeInterval: TimeInterval(Duration().TimerUpdateDuration), target: self, selector: #selector(self.onUpdate), userInfo: nil, repeats: true)
+            timer.fire()
+            pauseFlg = true
+            pauseButton.setImage(UIImage(named:"Pause"), for: UIControlState.normal)
+            
+        }
+        
+        
+    }
+    
     
     func onUpdate(timer:Timer) {
         
