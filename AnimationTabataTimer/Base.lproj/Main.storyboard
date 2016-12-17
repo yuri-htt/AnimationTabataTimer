@@ -53,6 +53,9 @@
                                 <frame key="frameInset" minX="243" minY="583" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="Stop"/>
+                                <connections>
+                                    <action selector="didPressStopButton:" destination="pLk-Qu-pWI" eventType="touchUpInside" id="0YJ-Wm-Eao"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yab-89-15m">
                                 <frame key="frameInset" minX="10" minY="156" width="355" height="355"/>

@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var angleHolder :CGFloat   = 0
     var pauseFlg    :Bool      = false
     var musicPlayer            = MPMusicPlayerController()
-    var status      :Int       = Status().prepare
+    var status      :Status    = .prepare
     var currentTime :CGFloat   = 0
     var prepareCouter :CGFloat = 0
     var workOutCounter:CGFloat = 0
@@ -66,8 +66,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - setup
-    
+    // MARK: - setup methods
+
     //グラフのサイズ/レイアウト/ポジションの設定
     func setupGraph() {
         
@@ -200,7 +200,7 @@ class ViewController: UIViewController {
         
         //なぜ-1?
         currentTime = -1
-        status = Status().prepare
+        status = Status.prepare
         pauseFlg = false
         
         titleLabel.text = TitleText().title
@@ -228,7 +228,6 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Button action
-    
     @IBAction func didPressStartButton(_ sender: AnyObject) {
         
         //【AVSpeechUtterance】
@@ -256,7 +255,7 @@ class ViewController: UIViewController {
         pauseButton.isHidden = false
         
         if !pauseFlg {
-            status = Status().prepare
+            status = Status.prepare
             
             titleLabel.text = TitleText().ready
             titleLabel.textColor = UIColor.yellow
@@ -309,9 +308,34 @@ class ViewController: UIViewController {
         
     }
     
-    
-    
+    // MARK: - methods
     func onUpdate(timer:Timer) {
+        
+        //止めたタイムを開始する際に１秒巻き戻す
+        currentTime = currentTime + Duration().TimerUpdateDuration
+        
+        switch status {
+        case .prepare:
+            prepareCouter = prepareCouter - Duration().TimerUpdateDuration
+            if prepareCouter < 0 {
+                prepareCouter = 0
+            }
+            prepareGraph.value = ceil(prepareCouter)
+        case .rest:
+            restCounter = restCounter - Duration().TimerUpdateDuration
+            if restCounter < 0 {
+                restCounter = 0
+            }
+            restGraph.value = ceil(restCounter)
+        case .workOut:
+            workOutCounter = workOutCounter - Duration().TimerUpdateDuration
+            if workOutCounter < 0 {
+                workOutCounter = 0
+            }
+            workOutGraph.value = ceil(workOutCounter)
+        default:
+            break
+        }
         
     }
     

@@ -9,6 +9,7 @@
 import UIKit
 
 struct Duration {
+    //
     let TimerUpdateDuration:CGFloat = 1.0
     let prepareAnimDuration:CGFloat = 1.0
     let startTitleDuration :CGFloat = 1.0
@@ -17,14 +18,6 @@ struct Duration {
 struct Scale {
     let comeFront:CGFloat = 1.0
     let goBack:CGFloat = 0.5
-}
-
-struct Status {
-    let prepare = 1
-    let rest    = 2
-    let workOut = 3
-    let pause   = 4
-    let others  = 0
 }
 
 struct Settings {
