@@ -204,8 +204,12 @@ class ViewController: UIViewController {
         titleLabel.textColor = UIColor.darkGray
         
         prepareCounter = Settings().prepareTime
+        prepareGraph.value = prepareCounter
         workOutCounter = Settings().workOutTime
+        workOutGraph.value = workOutCounter
         restCounter = Settings().restTime
+        restGraph.value = restCounter
+        totalGraph.value = ceil((Settings().endTime))
         
         angleHolder = 0
         turnBaseView(ang: angleHolder)
@@ -251,7 +255,7 @@ class ViewController: UIViewController {
         stopButton.isHidden = false
         pauseButton.isHidden = false
         
-        if !pauseFlg {
+        if pauseFlg {
             status = Status.prepare
             
             titleLabel.text = TitleText().ready
@@ -268,18 +272,18 @@ class ViewController: UIViewController {
     
     @IBAction func didPressPuaseButton(_ sender: AnyObject) {
         
-        if pauseFlg {
+        if !pauseFlg {//0
             
             //タイマーを破棄
             timer.invalidate()
-            pauseFlg = false
+            pauseFlg = true
             pauseButton.setImage(UIImage(named:"PauseStart"), for: UIControlState.normal)
             
         } else {
             
             timer = Timer.scheduledTimer(timeInterval: TimeInterval(Duration().TimerUpdateDuration), target: self, selector: #selector(self.onUpdate), userInfo: nil, repeats: true)
             timer.fire()
-            pauseFlg = true
+            pauseFlg = false
             pauseButton.setImage(UIImage(named:"Pause"), for: UIControlState.normal)
             
         }
