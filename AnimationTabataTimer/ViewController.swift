@@ -496,10 +496,33 @@ class ViewController: UIViewController {
     
     func turnBaseView(ang:CGFloat) {
         
+        //回転角度=90度
+        let angle = CGFloat(M_PI) / 180 * ang
+        
+        UIView.animate(withDuration: 1.0,
+                       animations: { () -> Void in
+                            // 回転用のアフィン行列を生成.
+                            self.baseTurnView.transform = CGAffineTransform(rotationAngle: angle)
+                       }, completion: { (Bool) -> Void in
+                            //nilでよくね？
+                       })
     }
     
     func turnTimerView(subview:UIView, ang:CGFloat, scale:CGFloat) {
         
+        //回転角度=90度
+        let angle = CGFloat(M_PI) / 180 * ang
+        
+        UIView.animate(withDuration: 1.0,
+                       animations: { () -> Void in
+                            // 回転用のアフィン行列を生成.
+                            let t1 = CGAffineTransform(rotationAngle: angle )
+                            let t2 = CGAffineTransform(scaleX: scale, y: scale)
+                        
+                            subview.transform = t1.concatenating(t2)
+                       },
+                       completion: { (Bool) -> Void in
+        })
     }
     
     
