@@ -86,8 +86,8 @@ class ViewController: UIViewController {
         
         /*layout*/
         prepareGraph.tag = 1
-        prepareGraph.value = ceil(Settings().workOutTime)
-        prepareGraph.maxValue = Settings().workOutTime
+        prepareGraph.value = ceil(Settings().prepareTime)
+        prepareGraph.maxValue = Settings().prepareTime
         prepareGraph.valueFontSize = 50
         prepareGraph.progressAngle = 100
         prepareGraph.progressLineWidth = 4
@@ -97,8 +97,8 @@ class ViewController: UIViewController {
         prepareGraph.progressCapType = 0
         prepareGraph.progressRotationAngle = 0
         prepareGraph.fontColor = Color().fontColor
-        prepareGraph.progressColor = Color().red
-        prepareGraph.progressStrokeColor = Color().red
+        prepareGraph.progressColor = Color().yellow
+        prepareGraph.progressStrokeColor = Color().yellow
         prepareGraph.emptyLineColor = UIColor.gray
         
         restGraph.tag = 2
@@ -118,8 +118,8 @@ class ViewController: UIViewController {
         restGraph.emptyLineColor = UIColor.gray
         
         workOutGraph.tag = 3
-        workOutGraph.value = ceil(Settings().restTime)
-        workOutGraph.maxValue = Settings().restTime
+        workOutGraph.value = ceil(Settings().workOutTime)
+        workOutGraph.maxValue = Settings().workOutTime
         workOutGraph.valueFontSize = 50
         workOutGraph.progressAngle = 100
         workOutGraph.progressLineWidth = 4
@@ -129,8 +129,8 @@ class ViewController: UIViewController {
         workOutGraph.progressCapType = 0
         workOutGraph.progressRotationAngle = 0
         workOutGraph.fontColor = Color().fontColor
-        workOutGraph.progressColor = Color().yellow
-        workOutGraph.progressStrokeColor = Color().yellow
+        workOutGraph.progressColor = Color().red
+        workOutGraph.progressStrokeColor = Color().red
         workOutGraph.emptyLineColor = UIColor.gray
         
         setGraph.tag = 4
