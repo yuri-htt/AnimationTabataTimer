@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     var musicPlayer            = MPMusicPlayerController()
     var status      :Status    = .prepare
     var currentTime :CGFloat   = 0
-    var prepareCouter :CGFloat = 0
+    var prepareCounter :CGFloat = 0
     var workOutCounter:CGFloat = 0
     var restCounter   :CGFloat = 0
     
@@ -206,7 +206,7 @@ class ViewController: UIViewController {
         titleLabel.text = TitleText().title
         titleLabel.textColor = UIColor.darkGray
         
-        prepareCouter = Settings().prepareTime
+        prepareCounter = Settings().prepareTime
         workOutCounter = Settings().workOutTime
         restCounter = Settings().restTime
         
@@ -309,6 +309,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: - methods
+    //一時停止＆スタート時に呼び出される
     func onUpdate(timer:Timer) {
         
         //止めたタイムを開始する際に１秒巻き戻す
@@ -316,11 +317,11 @@ class ViewController: UIViewController {
         
         switch status {
         case .prepare:
-            prepareCouter = prepareCouter - Duration().TimerUpdateDuration
-            if prepareCouter < 0 {
-                prepareCouter = 0
+            prepareCounter = prepareCounter - Duration().TimerUpdateDuration
+            if prepareCounter < 0 {
+                prepareCounter = 0
             }
-            prepareGraph.value = ceil(prepareCouter)
+            prepareGraph.value = ceil(prepareCounter)
         case .rest:
             restCounter = restCounter - Duration().TimerUpdateDuration
             if restCounter < 0 {
@@ -337,6 +338,160 @@ class ViewController: UIViewController {
             break
         }
         
+        //トータルの経過時間を更新
+        totalGraph.value = ceil((Settings().endTime) - currentTime)
+        
+        /*-*/
+        if prepareCounter <= 0 {
+            
+            status = Status.workOut
+            
+            prepareCounter = Settings().prepareTime
+            prepareGraph.value = ceil(prepareCounter)
+            
+            workOutAnimView.animation = "morph"
+            workOutAnimView.duration = 1.0
+            workOutAnimView.animate()
+            
+            titleLabel.text = "START WORKOUT"
+            titleLabel.textColor = Color().red
+            titleLabel.animation = "fadeInLeft"
+            titleLabel.duration = 1.0
+            titleLabel.animate()
+            
+            let utterance = AVSpeechUtterance(string: "Start workout!")
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            talker.speak(utterance)
+            
+            //回転縮小拡大
+            angleHolder = angleHolder + 120
+            turnBaseView(ang: angleHolder)
+            turnTimerView(subview:workOutGraph, ang: -angleHolder,scale: 1.0)
+            turnTimerView(subview:prepareGraph, ang: -angleHolder,scale: 0.5)
+            turnTimerView(subview:restGraph, ang: -angleHolder,scale: 0.5)
+            
+        } else if restCounter <= 0 {
+            
+            status = Status.workOut
+            
+            restCounter = Settings().restTime
+            restGraph.value = ceil(restCounter)
+            
+            workOutAnimView.animation = "morph"
+            workOutAnimView.duration = 1.0
+            workOutAnimView.animate()
+            
+            if currentTime >= Settings().endTime {
+                //終了時は何もしない
+            } else {
+                titleLabel.text = "START WORKOUT"
+                titleLabel.textColor = Color().red
+                titleLabel.animation = "fadeInLeft"
+                titleLabel.duration = 1.0
+                titleLabel.animate()
+            }
+            
+            let utterance = AVSpeechUtterance(string: "Start workout!")
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            talker.speak(utterance)
+            
+            //回転縮小拡大
+            angleHolder = angleHolder - 120
+            turnBaseView(ang: angleHolder)
+            turnTimerView(subview:workOutGraph, ang: -angleHolder,scale: 1.0)
+            turnTimerView(subview:prepareGraph, ang: -angleHolder,scale: 0.5)
+            turnTimerView(subview:restGraph, ang: -angleHolder,scale: 0.5)
+            
+        } else if workOutCounter <= 0 {
+            
+            status = Status.rest
+            
+            workOutCounter = Settings().workOutTime
+            workOutGraph.value = ceil(workOutCounter)
+            
+            restAnimView.animation = "morph"
+            restAnimView.duration = 1.0
+            restAnimView.animate()
+            
+            if currentTime >= Settings().endTime {
+                //終了時は何もしない
+            } else {
+                titleLabel.text = "INTERVAL"
+                titleLabel.textColor = Color().blue
+                titleLabel.animation = "fadeInLeft"
+                titleLabel.duration = 1.0
+                titleLabel.animate()
+            }
+            
+            let utterance = AVSpeechUtterance(string: "Interval.")
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            talker.speak(utterance)
+            
+            //回転縮小拡大
+            angleHolder = angleHolder + 120
+            turnBaseView(ang: angleHolder)
+            turnTimerView(subview:workOutGraph, ang: -angleHolder,scale: 0.5)
+            turnTimerView(subview:prepareGraph, ang: -angleHolder,scale: 0.5)
+            turnTimerView(subview:restGraph, ang: -angleHolder,scale: 1.0)
+            
+        }
+        
+        /*CountDownVoice*/
+        //カウントダウン音声
+        if( workOutCounter == 5 ||  restCounter == 5 || prepareCounter == 5 ){
+            
+            //audioPlayer.play()
+            let utterance = AVSpeechUtterance(string: "5")
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            talker.speak(utterance)
+            
+        }else if( workOutCounter == 4 ||  restCounter == 4 || prepareCounter == 4 ){
+            
+            let utterance = AVSpeechUtterance(string: "4")
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            talker.speak(utterance)
+            
+        }else if( workOutCounter == 3 ||  restCounter == 3 || prepareCounter == 3 ){
+            
+            let utterance = AVSpeechUtterance(string: "3")
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            talker.speak(utterance)
+            
+        }else if( workOutCounter == 2 ||  restCounter == 2 || prepareCounter == 2 ){
+            
+            let utterance = AVSpeechUtterance(string: "2")
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            talker.speak(utterance)
+            
+        }else if( workOutCounter == 1 ||  restCounter == 1 || prepareCounter == 1 ){
+            
+            let utterance = AVSpeechUtterance(string: "1")
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            talker.speak(utterance)
+            
+        }
+        
+        /*終了処理*/
+        if currentTime >= Settings().endTime {
+            timer.invalidate()
+            
+            resetAll()
+            workOutAnimView.animation = "pop"
+            workOutAnimView.duration = 1.0
+            workOutAnimView.animate()
+            prepareAnimView.animation = "pop"
+            prepareAnimView.duration = 1.0
+            prepareAnimView.animate()
+            restAnimView.animation = "pop"
+            restAnimView.duration = 1.0
+            restAnimView.animate()
+            
+            startButton.isHidden = false
+            
+            let utterance = AVSpeechUtterance(string: "Good job!")
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            talker.speak(utterance)
+        }
     }
     
     func turnBaseView(ang:CGFloat) {
