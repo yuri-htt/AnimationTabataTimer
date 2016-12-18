@@ -6,7 +6,6 @@
 //  Copyright © 2016年 Yuri Tayama. All rights reserved.
 //
 
-
 import UIKit
 import MBCircularProgressBar
 import AVFoundation
@@ -22,10 +21,9 @@ class ViewController: UIViewController {
     var musicPlayer            = MPMusicPlayerController()
     var status      :Status    = .prepare
     var currentTime :CGFloat   = 0
-    var prepareCounter :CGFloat = 0
+    var prepareCounter:CGFloat = 0
     var workOutCounter:CGFloat = 0
     var restCounter   :CGFloat = 0
-    
     
     @IBOutlet weak var titleLabel: SpringLabel!
     
@@ -44,7 +42,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var pauseButton: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

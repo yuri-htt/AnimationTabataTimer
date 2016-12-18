@@ -42,7 +42,7 @@ struct DisplayString {
 }
 
 struct Color {
-    var fontColor = Formatter().colorWithHexString(hex: "6F7179", Alpha: 1.0 )
+    var fontColor = Formatter().colorWithHexString(hex: "FFFFFF", Alpha: 1.0 )
     let yellow:UIColor = Formatter().colorWithHexString(hex: "B9AD1E", Alpha: 1.0)
     let red:UIColor = Formatter().colorWithHexString(hex: "CC2D62", Alpha: 1.0)
     let blue:UIColor = Formatter().colorWithHexString(hex: "2D8CDD", Alpha: 1.0)

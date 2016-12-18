@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pLk-Qu-pWI">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,89 +18,120 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TABATA TIMER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76d-mh-qFA" customClass="SpringLabel" customModule="Spring">
-                                <frame key="frameInset" minX="98" minY="321" width="178" height="25"/>
+                                <frame key="frameInset" minX="98" minY="20" width="178" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="24"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SGh-Di-WmP" customClass="MBCircularProgressBarView">
-                                <frame key="frameInset" minX="16" minY="510" width="97" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGh-Di-WmP" customClass="MBCircularProgressBarView">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="BYH-EC-UOL"/>
+                                    <constraint firstAttribute="width" constant="70" id="iol-A0-hRQ"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FUK-pz-L6f" customClass="MBCircularProgressBarView">
-                                <frame key="frameInset" minX="281" minY="499" width="78" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUK-pz-L6f" customClass="MBCircularProgressBarView">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="3Ig-FL-35S"/>
+                                    <constraint firstAttribute="width" constant="70" id="PzD-1s-9IH"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkV-qO-DlE">
-                                <frame key="frameInset" minX="157" minY="583" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkV-qO-DlE">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="alB-tW-i7F"/>
+                                    <constraint firstAttribute="height" constant="50" id="eFp-zU-HVe"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="Play"/>
                                 <connections>
                                     <action selector="didPressStartButton:" destination="pLk-Qu-pWI" eventType="touchUpInside" id="Roz-Xf-vWh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYN-O1-rig">
-                                <frame key="frameInset" minX="95" minY="589" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYN-O1-rig">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4Cz-a2-hW8"/>
+                                    <constraint firstAttribute="width" constant="50" id="MdY-vZ-I4G"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="Pause"/>
                                 <connections>
                                     <action selector="didPressPuaseButton:" destination="pLk-Qu-pWI" eventType="touchUpInside" id="Uqu-xm-71i"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGt-cW-Loz">
-                                <frame key="frameInset" minX="243" minY="583" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGt-cW-Loz">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SoP-le-7JC"/>
+                                    <constraint firstAttribute="width" constant="50" id="euO-s0-uV8"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="Stop"/>
                                 <connections>
                                     <action selector="didPressStopButton:" destination="pLk-Qu-pWI" eventType="touchUpInside" id="0YJ-Wm-Eao"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yab-89-15m">
-                                <frame key="frameInset" minX="10" minY="156" width="355" height="355"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yab-89-15m">
+                                <frame key="frameInset" minX="10" minY="70" width="355" height="355"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wvR-yh-VFG" customClass="SpringView" customModule="Spring">
+                                        <frame key="frameInset" minX="67" minY="135" width="220" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rhs-y0-Ne6" customClass="MBCircularProgressBarView">
+                                                <frame key="frameInset" width="220" height="220"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U86-oZ-iSJ" customClass="SpringView" customModule="Spring">
                                         <frame key="frameInset" minX="8" minY="8" width="220" height="220"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3vO-61-71p" customClass="MBCircularProgressBarView">
-                                                <frame key="frameInset" minY="8" width="220" height="220"/>
+                                                <frame key="frameInset" width="220" height="220"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sa-HK-Jx5" customClass="SpringView" customModule="Spring">
                                         <frame key="frameInset" minX="127" minY="8" width="220" height="220"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0BA-fO-WIV" customClass="MBCircularProgressBarView">
-                                                <frame key="frameInset" minX="-8" minY="8" width="220" height="220"/>
+                                                <frame key="frameInset" width="220" height="220"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wvR-yh-VFG" customClass="SpringView" customModule="Spring">
-                                        <frame key="frameInset" minX="67" minY="135" width="220" height="220"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rhs-y0-Ne6" customClass="MBCircularProgressBarView">
-                                                <frame key="frameInset" minX="-8" width="220" height="220"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </view>
-                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="yab-89-15m" secondAttribute="height" multiplier="1:1" id="Vie-Kl-HK7"/>
-                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elF-p7-r1i">
-                                <frame key="frameInset" minX="309" minY="615" width="56" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elF-p7-r1i">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="1aU-7T-bSN"/>
+                                    <constraint firstAttribute="height" constant="50" id="iyL-3D-R1v"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="Setting"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Ma-hg-824" firstAttribute="top" secondItem="EYN-O1-rig" secondAttribute="bottom" constant="70" id="20D-pL-l9T"/>
+                            <constraint firstItem="QkV-qO-DlE" firstAttribute="centerX" secondItem="aur-wJ-wyq" secondAttribute="centerX" id="4Wg-Ew-MuG"/>
+                            <constraint firstItem="kGt-cW-Loz" firstAttribute="top" secondItem="FUK-pz-L6f" secondAttribute="bottom" constant="8" id="9GH-Br-Tgx"/>
+                            <constraint firstItem="elF-p7-r1i" firstAttribute="centerX" secondItem="aur-wJ-wyq" secondAttribute="centerX" id="El8-2N-D3f"/>
+                            <constraint firstAttribute="trailing" secondItem="FUK-pz-L6f" secondAttribute="trailing" constant="10" id="JS7-Gh-r0e"/>
+                            <constraint firstItem="8Ma-hg-824" firstAttribute="top" secondItem="elF-p7-r1i" secondAttribute="bottom" constant="10" id="LZ9-iv-5pN"/>
+                            <constraint firstItem="8Ma-hg-824" firstAttribute="top" secondItem="QkV-qO-DlE" secondAttribute="bottom" constant="70" id="MXQ-Vl-GWT"/>
+                            <constraint firstItem="SGh-Di-WmP" firstAttribute="leading" secondItem="aur-wJ-wyq" secondAttribute="leading" constant="10" id="Px5-Dl-cPL"/>
+                            <constraint firstItem="kGt-cW-Loz" firstAttribute="leading" secondItem="QkV-qO-DlE" secondAttribute="trailing" constant="10" id="QUO-Qa-cjj"/>
+                            <constraint firstItem="QkV-qO-DlE" firstAttribute="leading" secondItem="EYN-O1-rig" secondAttribute="trailing" constant="10" id="RKe-wm-KMg"/>
+                            <constraint firstItem="elF-p7-r1i" firstAttribute="top" secondItem="QkV-qO-DlE" secondAttribute="bottom" constant="10" id="fGE-gl-UcY"/>
+                            <constraint firstItem="8Ma-hg-824" firstAttribute="top" secondItem="kGt-cW-Loz" secondAttribute="bottom" constant="70" id="nDk-Im-RKd"/>
+                            <constraint firstItem="EYN-O1-rig" firstAttribute="top" secondItem="SGh-Di-WmP" secondAttribute="bottom" constant="8" id="qzp-Le-4QL"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="baseTurnView" destination="yab-89-15m" id="L7A-8S-gjx"/>
