@@ -9,28 +9,26 @@
 import UIKit
 
 struct Duration {
-    //
     let TimerUpdateDuration:CGFloat = 1.0
     let prepareAnimDuration:CGFloat = 1.0
     let startTitleDuration :CGFloat = 1.0
+    let resetAnimDuration  :CGFloat = 1.0
 }
 
 struct Scale {
     let comeFront:CGFloat = 1.0
-    let goBack:CGFloat = 0.5
+    let goBack:CGFloat    = 0.5
 }
 
 struct Settings {
     var workOutTime:CGFloat = 20
     var prepareTime:CGFloat = 10
-    var restTime:CGFloat = 10
-    var setCounter:CGFloat = 8
+    var restTime:CGFloat    = 10
+    var setCounter:CGFloat  = 8
     var endTime:CGFloat
-    var test:Int
     
     init() {
         endTime = prepareTime + ( workOutTime + restTime ) * setCounter - restTime
-        test = Int(prepareTime + ( workOutTime + restTime ) * setCounter - restTime)
     }
 }
 

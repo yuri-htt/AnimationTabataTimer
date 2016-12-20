@@ -52,30 +52,27 @@ class ViewController: UIViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     // MARK: - setup methods
-    // グラフのサイズ/レイアウト/ポジションの設定
     func setupGraph() {
         
         /*Size*/
-        baseTurnView.frame.size = CGSize(width: UIScreen.main.bounds.size.height * 0.55, height: UIScreen.main.bounds.size.height * 0.55 )
+        let screenSize = UIScreen.main.bounds.size
+        baseTurnView.frame.size = CGSize(width: screenSize.height * 0.55, height: screenSize.height * 0.55 )
         baseTurnView.center.x = self.view.center.x
         
-        workOutAnimView.frame.size = CGSize(width:baseTurnView.frame.size.width * 0.7, height: baseTurnView.frame.size.height * 0.7 )
+        let baseViewSize = baseTurnView.frame.size
+        workOutAnimView.frame.size = CGSize(width: baseViewSize.width * 0.7, height: baseViewSize.height * 0.7 )
         workOutGraph.frame.size = workOutAnimView.frame.size
         
-        prepareAnimView.frame.size = CGSize(width:baseTurnView.frame.size.width * 0.7, height: baseTurnView.frame.size.height * 0.7 )
+        prepareAnimView.frame.size = CGSize(width: baseViewSize.width * 0.7, height: baseViewSize.height * 0.7 )
         prepareGraph.frame.size = prepareAnimView.frame.size
         
-        restAnimView.frame.size = CGSize(width:baseTurnView.frame.size.width * 0.7, height: baseTurnView.frame.size.height * 0.7 )
+        restAnimView.frame.size = CGSize(width: baseViewSize.width * 0.7, height: baseViewSize.height * 0.7 )
         restGraph.frame.size = restAnimView.frame.size
         
         titleLabel.center.x = self.view.center.x
         
-        /*layout*/
+        /*Value*/
         prepareGraph.value = ceil(Settings().prepareTime)
         prepareGraph.maxValue = Settings().prepareTime
         
@@ -84,10 +81,6 @@ class ViewController: UIViewController {
         
         workOutGraph.value = ceil(Settings().workOutTime)
         workOutGraph.maxValue = Settings().workOutTime
-        //workOutGraph.fontColor = Color().fontColor
-        //workOutGraph.progressColor = Color().forWorkOut
-        //workOutGraph.progressStrokeColor = Color().forWorkOut
-        //workOutGraph.emptyLineColor = UIColor.gray
         
         setGraph.value = ceil( CGFloat(Settings().setCounter))
         setGraph.maxValue = ceil( CGFloat(Settings().setCounter))
@@ -96,21 +89,20 @@ class ViewController: UIViewController {
         totalGraph.maxValue = CGFloat(Settings().endTime)
         
         /*Position*/
-        let radius:CGFloat = baseTurnView.layer.bounds.width/3
+        let radius:CGFloat = baseTurnView.layer.bounds.width / 3
 
+        /*
+          中心点を基準としたオブジェクトの新しい(回転後の)XY座標を求める公式
+          x1 = cos(angle) * x - sin(angle) * y
+          y1 = cos(angle) * y + sin(angle) * x
+          angle = 回転角(radian)
+         */
         let workOutRadian:CGFloat = -30 * CGFloat(M_PI) / 180
         let workOutX = cos(workOutRadian) * radius
         let workOutY = sin(workOutRadian) * radius
         workOutAnimView.layer.position = CGPoint(
             x: baseTurnView.bounds.width / 2 + workOutX,
             y: baseTurnView.bounds.height / 2 + workOutY)
-        
-        let prepareRadian:CGFloat = -270 * CGFloat(M_PI) / 180
-        let prepareX = cos(prepareRadian) * radius
-        let prepareY = sin(prepareRadian) * radius
-        prepareAnimView.layer.position = CGPoint(
-            x: baseTurnView.bounds.width / 2 + prepareX,
-            y: baseTurnView.bounds.height / 2 + prepareY)
         
         let restRadian = -150 * CGFloat(M_PI) / 180
         let restX = cos(restRadian) * radius
@@ -119,12 +111,18 @@ class ViewController: UIViewController {
             x: baseTurnView.bounds.width / 2 + restX,
             y: baseTurnView.bounds.height / 2 + restY)
         
+        let prepareRadian:CGFloat = -270 * CGFloat(M_PI) / 180
+        let prepareX = cos(prepareRadian) * radius
+        let prepareY = sin(prepareRadian) * radius
+        prepareAnimView.layer.position = CGPoint(
+            x: baseTurnView.bounds.width / 2 + prepareX,
+            y: baseTurnView.bounds.height / 2 + prepareY)
+        
     }
     
     //カウンターの数値＆グラフの位置の初期化/ボタン
     func resetAll() {
         
-        currentTime = -1
         status = Status.prepare
         isPause = false
         
@@ -141,14 +139,26 @@ class ViewController: UIViewController {
         
         angleHolder = 0
         turnBaseView(ang: angleHolder)
-        turnTimerView(subview: prepareGraph, ang: -angleHolder, scale: Scale().comeFront)
-        turnTimerView(subview: workOutGraph, ang: -angleHolder, scale: Scale().goBack)
-        turnTimerView(subview: restGraph, ang: -angleHolder, scale: Scale().goBack)
+        turnTimerView(subview: prepareGraph, ang: angleHolder, scale: Scale().comeFront)
+        turnTimerView(subview: workOutGraph, ang: angleHolder, scale: Scale().goBack)
+        turnTimerView(subview: restGraph, ang: angleHolder, scale: Scale().goBack)
         
         stopButton.isHidden = true
         pauseButton.isHidden = true
         startButton.isHidden = false
         
+    }
+    
+    func resetAnim() {
+        workOutAnimView.animation = "pop"
+        workOutAnimView.duration = 1.0
+        workOutAnimView.animate()
+        prepareAnimView.animation = "pop"
+        prepareAnimView.duration = 1.0
+        prepareAnimView.animate()
+        restAnimView.animation = "pop"
+        restAnimView.duration = 1.0
+        restAnimView.animate()
     }
 
     // MARK: - Button action
@@ -158,9 +168,7 @@ class ViewController: UIViewController {
         // - iOS7で追加された音声読み上げライブラリ
         // - http://dev.classmethod.jp/smartphone/iphone/swfit-avspeechsynthesizer/
         
-        let utterance = AVSpeechUtterance(string: "Ready")
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        talker.speak(utterance)
+        readAloud(text:"Ready")
         
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(Duration().TimerUpdateDuration), target:self, selector:#selector(self.onUpdate), userInfo:nil, repeats:true)
         timer.fire()
@@ -182,7 +190,7 @@ class ViewController: UIViewController {
             status = Status.prepare
             
             titleLabel.text = TitleText().ready
-            titleLabel.textColor = UIColor.yellow
+            titleLabel.textColor = Color().red
             titleLabel.animation = "fadeInLeft"
             titleLabel.duration = CGFloat(Duration().startTitleDuration)
             titleLabel.animate()
@@ -214,16 +222,7 @@ class ViewController: UIViewController {
         
         timer.invalidate()
         resetAll()
-        
-        prepareAnimView.animation = "pop"
-        prepareAnimView.duration = 1.0
-        prepareAnimView.animate()
-        workOutAnimView.animation = "pop"
-        workOutAnimView.duration = 1.0
-        workOutAnimView.animate()
-        restAnimView.animation = "pop"
-        restAnimView.duration = 1.0
-        restAnimView.animate()
+        resetAnim()
         
         startButton.isHidden = false
         
@@ -260,7 +259,6 @@ class ViewController: UIViewController {
             break
         }
         
-        /*-*/
         if prepareCounter <= 0 {
             
             status = Status.workOut
@@ -278,12 +276,12 @@ class ViewController: UIViewController {
             titleLabel.duration = 1.0
             titleLabel.animate()
             
-            let utterance = AVSpeechUtterance(string: "Start workout!")
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            talker.speak(utterance)
+            readAloud(text:"Start workout!")
             
+            //時計回りに120度回転
             angleHolder = angleHolder + 120
             turnBaseView(ang: angleHolder)
+            //ベースの回転方向とは逆方向に同じ角度だけ回転
             turnTimerView(subview:workOutGraph, ang: -angleHolder,scale: 1.0)
             turnTimerView(subview:prepareGraph, ang: -angleHolder,scale: 0.5)
             turnTimerView(subview:restGraph, ang: -angleHolder,scale: 0.5)
@@ -309,9 +307,7 @@ class ViewController: UIViewController {
                 titleLabel.animate()
             }
             
-            let utterance = AVSpeechUtterance(string: "Start workout!")
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            talker.speak(utterance)
+            readAloud(text:"Start workout!")
             
             angleHolder = angleHolder - 120
             turnBaseView(ang: angleHolder)
@@ -334,15 +330,13 @@ class ViewController: UIViewController {
                 //終了時は何もしない
             } else {
                 titleLabel.text = "INTERVAL"
-                titleLabel.textColor = Color().blue
+                titleLabel.textColor = Color().red
                 titleLabel.animation = "fadeInLeft"
                 titleLabel.duration = 1.0
                 titleLabel.animate()
             }
             
-            let utterance = AVSpeechUtterance(string: "Interval.")
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            talker.speak(utterance)
+            readAloud(text: "Interval")
             
             angleHolder = angleHolder + 120
             turnBaseView(ang: angleHolder)
@@ -357,33 +351,23 @@ class ViewController: UIViewController {
         
         if( workOutCounter == 5 ||  restCounter == 5 || prepareCounter == 5 ){
 
-            let utterance = AVSpeechUtterance(string: "5")
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            talker.speak(utterance)
+            readAloud(text: "5")
             
         }else if( workOutCounter == 4 ||  restCounter == 4 || prepareCounter == 4 ){
             
-            let utterance = AVSpeechUtterance(string: "4")
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            talker.speak(utterance)
+            readAloud(text: "4")
             
         }else if( workOutCounter == 3 ||  restCounter == 3 || prepareCounter == 3 ){
             
-            let utterance = AVSpeechUtterance(string: "3")
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            talker.speak(utterance)
+            readAloud(text: "3")
             
         }else if( workOutCounter == 2 ||  restCounter == 2 || prepareCounter == 2 ){
             
-            let utterance = AVSpeechUtterance(string: "2")
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            talker.speak(utterance)
+            readAloud(text: "2")
             
         }else if( workOutCounter == 1 ||  restCounter == 1 || prepareCounter == 1 ){
             
-            let utterance = AVSpeechUtterance(string: "1")
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            talker.speak(utterance)
+            readAloud(text: "1")
             
         }
         
@@ -392,21 +376,12 @@ class ViewController: UIViewController {
             timer.invalidate()
             
             resetAll()
-            workOutAnimView.animation = "pop"
-            workOutAnimView.duration = 1.0
-            workOutAnimView.animate()
-            prepareAnimView.animation = "pop"
-            prepareAnimView.duration = 1.0
-            prepareAnimView.animate()
-            restAnimView.animation = "pop"
-            restAnimView.duration = 1.0
-            restAnimView.animate()
+            resetAnim()
             
             startButton.isHidden = false
             
-            let utterance = AVSpeechUtterance(string: "Good job!")
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            talker.speak(utterance)
+            readAloud(text: "Good job!")
+
         }
     }
     
@@ -440,6 +415,10 @@ class ViewController: UIViewController {
         })
     }
     
-    func readAloud(
+    func readAloud(text:String) {
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        talker.speak(utterance)
+    }
 }
 
