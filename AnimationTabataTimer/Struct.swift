@@ -26,9 +26,11 @@ struct Settings {
     var restTime:CGFloat = 10
     var setCounter:CGFloat = 8
     var endTime:CGFloat
+    var test:Int
     
     init() {
         endTime = prepareTime + ( workOutTime + restTime ) * setCounter - restTime
+        test = Int(prepareTime + ( workOutTime + restTime ) * setCounter - restTime)
     }
 }
 
@@ -37,14 +39,13 @@ struct TitleText {
     var ready = "READY"
 }
 
-struct DisplayString {
-    var unit = "Sec"
-}
-
 struct Color {
-    var fontColor = Formatter().colorWithHexString(hex: "FFFFFF", Alpha: 1.0 )
+    let fontColor = Formatter().colorWithHexString(hex: "FFFFFF", Alpha: 1.0 )
+    let forPrepare:UIColor = Formatter().colorWithHexString(hex: "B9AD1E", Alpha: 1.0)
     let yellow:UIColor = Formatter().colorWithHexString(hex: "B9AD1E", Alpha: 1.0)
+    let forWorkOut:UIColor = Formatter().colorWithHexString(hex: "CC2D62", Alpha: 1.0)
     let red:UIColor = Formatter().colorWithHexString(hex: "CC2D62", Alpha: 1.0)
+    let forRest:UIColor = Formatter().colorWithHexString(hex: "2D8CDD", Alpha: 1.0)
     let blue:UIColor = Formatter().colorWithHexString(hex: "2D8CDD", Alpha: 1.0)
     let green:UIColor = Formatter().colorWithHexString(hex: "70BF41", Alpha: 1.0)
     let orange:UIColor = Formatter().colorWithHexString(hex: "F39019", Alpha: 1.0)

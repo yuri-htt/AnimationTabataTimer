@@ -17,8 +17,7 @@ class ViewController: UIViewController {
     let talker                 = AVSpeechSynthesizer()
     var timer       :Timer     = Timer()
     var angleHolder :CGFloat   = 0
-    var pauseFlg    :Bool      = false
-    var musicPlayer            = MPMusicPlayerController()
+    var isPause    :Bool      = false//消したい
     var status      :Status    = .prepare
     var currentTime :CGFloat   = 0
     var prepareCounter:CGFloat = 0
@@ -46,26 +45,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        musicPlayer = MPMusicPlayerController.applicationMusicPlayer()
-        musicPlayer.beginGeneratingPlaybackNotifications()
-        
         //グラフのレイアウトを設定
         setupGraph()
         //カウンターの数値を初期化
         resetAll()
-        //カウンターの数値をカスタマイズ用
-        setupPicker()
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - setup methods
-
-    //グラフのサイズ/レイアウト/ポジションの設定
+    // グラフのサイズ/レイアウト/ポジションの設定
     func setupGraph() {
         
         /*Size*/
@@ -81,92 +73,29 @@ class ViewController: UIViewController {
         restAnimView.frame.size = CGSize(width:baseTurnView.frame.size.width * 0.7, height: baseTurnView.frame.size.height * 0.7 )
         restGraph.frame.size = restAnimView.frame.size
         
-        setGraph.frame.size = CGSize(width: 60, height: 60)
         titleLabel.center.x = self.view.center.x
         
         /*layout*/
-        prepareGraph.tag = 1
         prepareGraph.value = ceil(Settings().prepareTime)
         prepareGraph.maxValue = Settings().prepareTime
-        prepareGraph.valueFontSize = 50
-        prepareGraph.progressAngle = 100
-        prepareGraph.progressLineWidth = 4
-        prepareGraph.emptyLineWidth = 4
-        prepareGraph.unitString = DisplayString().unit
-        prepareGraph.unitFontSize = 20
-        prepareGraph.progressCapType = 0
-        prepareGraph.progressRotationAngle = 0
-        prepareGraph.fontColor = Color().fontColor
-        prepareGraph.progressColor = Color().yellow
-        prepareGraph.progressStrokeColor = Color().yellow
-        prepareGraph.emptyLineColor = UIColor.gray
         
-        restGraph.tag = 2
         restGraph.value = ceil(Settings().restTime)
         restGraph.maxValue = Settings().restTime
-        restGraph.valueFontSize = 50
-        restGraph.progressAngle = 100
-        restGraph.progressLineWidth = 4
-        restGraph.emptyLineWidth = 4
-        restGraph.unitString = DisplayString().unit
-        restGraph.unitFontSize = 20
-        restGraph.progressCapType = 0
-        restGraph.progressRotationAngle = 0
-        restGraph.fontColor = Color().fontColor
-        restGraph.progressColor = Color().blue
-        restGraph.progressStrokeColor = Color().blue
-        restGraph.emptyLineColor = UIColor.gray
         
-        workOutGraph.tag = 3
         workOutGraph.value = ceil(Settings().workOutTime)
         workOutGraph.maxValue = Settings().workOutTime
-        workOutGraph.valueFontSize = 50
-        workOutGraph.progressAngle = 100
-        workOutGraph.progressLineWidth = 4
-        workOutGraph.emptyLineWidth = 4
-        workOutGraph.unitString = DisplayString().unit
-        workOutGraph.unitFontSize = 20
-        workOutGraph.progressCapType = 0
-        workOutGraph.progressRotationAngle = 0
-        workOutGraph.fontColor = Color().fontColor
-        workOutGraph.progressColor = Color().red
-        workOutGraph.progressStrokeColor = Color().red
-        workOutGraph.emptyLineColor = UIColor.gray
+        //workOutGraph.fontColor = Color().fontColor
+        //workOutGraph.progressColor = Color().forWorkOut
+        //workOutGraph.progressStrokeColor = Color().forWorkOut
+        //workOutGraph.emptyLineColor = UIColor.gray
         
-        setGraph.tag = 4
         setGraph.value = ceil( CGFloat(Settings().setCounter))
         setGraph.maxValue = ceil( CGFloat(Settings().setCounter))
-        setGraph.valueFontSize = 20
-        setGraph.progressAngle = 100
-        setGraph.progressLineWidth = 2
-        setGraph.unitString = DisplayString().unit
-        setGraph.emptyLineWidth = 2
-        setGraph.unitFontSize = 10
-        setGraph.progressCapType = 0
-        setGraph.progressRotationAngle = 0
-        setGraph.fontColor = Color().fontColor
-        setGraph.progressColor = Color().orange
-        setGraph.progressStrokeColor = Color().orange
-        setGraph.emptyLineColor = UIColor.gray
         
-        totalGraph.tag = 5
         totalGraph.value = ceil( CGFloat(Settings().endTime) )
         totalGraph.maxValue = CGFloat(Settings().endTime)
-        totalGraph.valueFontSize = 20
-        totalGraph.progressAngle = 100
-        totalGraph.progressLineWidth = 2
-        totalGraph.unitString = DisplayString().unit
-        totalGraph.emptyLineWidth = 2
-        totalGraph.unitFontSize = 10
-        totalGraph.progressCapType = 0
-        totalGraph.progressRotationAngle = 0
-        totalGraph.fontColor = Color().fontColor
-        totalGraph.progressColor = Color().orange
-        totalGraph.progressStrokeColor = Color().orange
-        totalGraph.emptyLineColor = UIColor.gray
         
         /*Position*/
-        //ここらへん全部わからん
         let radius:CGFloat = baseTurnView.layer.bounds.width/3
 
         let workOutRadian:CGFloat = -30 * CGFloat(M_PI) / 180
@@ -195,10 +124,9 @@ class ViewController: UIViewController {
     //カウンターの数値＆グラフの位置の初期化/ボタン
     func resetAll() {
         
-        //なぜ-1?
         currentTime = -1
         status = Status.prepare
-        pauseFlg = false
+        isPause = false
         
         titleLabel.text = TitleText().title
         titleLabel.textColor = UIColor.darkGray
@@ -222,12 +150,7 @@ class ViewController: UIViewController {
         startButton.isHidden = false
         
     }
-    
-    //グラフのカウンターをカスタマイズする時に使用するpicker
-    func setupPicker() {
-       //処理
-    }
-    
+
     // MARK: - Button action
     @IBAction func didPressStartButton(_ sender: AnyObject) {
         
@@ -255,7 +178,7 @@ class ViewController: UIViewController {
         stopButton.isHidden = false
         pauseButton.isHidden = false
         
-        if pauseFlg {
+        if isPause {
             status = Status.prepare
             
             titleLabel.text = TitleText().ready
@@ -264,26 +187,23 @@ class ViewController: UIViewController {
             titleLabel.duration = CGFloat(Duration().startTitleDuration)
             titleLabel.animate()
             
-        } else {
-            //特に処理なし
         }
         
     }
     
     @IBAction func didPressPuaseButton(_ sender: AnyObject) {
         
-        if !pauseFlg {//0
+        if !isPause {
             
-            //タイマーを破棄
             timer.invalidate()
-            pauseFlg = true
+            isPause = true
             pauseButton.setImage(UIImage(named:"PauseStart"), for: UIControlState.normal)
             
         } else {
             
             timer = Timer.scheduledTimer(timeInterval: TimeInterval(Duration().TimerUpdateDuration), target: self, selector: #selector(self.onUpdate), userInfo: nil, repeats: true)
             timer.fire()
-            pauseFlg = false
+            isPause = false
             pauseButton.setImage(UIImage(named:"Pause"), for: UIControlState.normal)
             
         }
@@ -315,6 +235,7 @@ class ViewController: UIViewController {
         
         //止めたタイムを開始する際に１秒巻き戻す
         currentTime = currentTime + Duration().TimerUpdateDuration
+        totalGraph.value = ceil(Settings().endTime - currentTime)
         
         switch status {
         case .prepare:
@@ -339,9 +260,6 @@ class ViewController: UIViewController {
             break
         }
         
-        //トータルの経過時間を更新
-        totalGraph.value = ceil((Settings().endTime) - currentTime)
-        
         /*-*/
         if prepareCounter <= 0 {
             
@@ -364,7 +282,6 @@ class ViewController: UIViewController {
             utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
             talker.speak(utterance)
             
-            //回転縮小拡大
             angleHolder = angleHolder + 120
             turnBaseView(ang: angleHolder)
             turnTimerView(subview:workOutGraph, ang: -angleHolder,scale: 1.0)
@@ -396,7 +313,6 @@ class ViewController: UIViewController {
             utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
             talker.speak(utterance)
             
-            //回転縮小拡大
             angleHolder = angleHolder - 120
             turnBaseView(ang: angleHolder)
             turnTimerView(subview:workOutGraph, ang: -angleHolder,scale: 1.0)
@@ -428,7 +344,6 @@ class ViewController: UIViewController {
             utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
             talker.speak(utterance)
             
-            //回転縮小拡大
             angleHolder = angleHolder + 120
             turnBaseView(ang: angleHolder)
             turnTimerView(subview:workOutGraph, ang: -angleHolder,scale: 0.5)
@@ -439,9 +354,9 @@ class ViewController: UIViewController {
         
         /*CountDownVoice*/
         //カウントダウン音声
+        
         if( workOutCounter == 5 ||  restCounter == 5 || prepareCounter == 5 ){
-            
-            //audioPlayer.play()
+
             let utterance = AVSpeechUtterance(string: "5")
             utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
             talker.speak(utterance)
@@ -497,21 +412,19 @@ class ViewController: UIViewController {
     
     func turnBaseView(ang:CGFloat) {
         
-        //回転角度=90度
+        //M_PI / 180 = 1°のラジアン角
+        //M_PIは半円に相当
         let angle = CGFloat(M_PI) / 180 * ang
         
         UIView.animate(withDuration: 1.0,
                        animations: { () -> Void in
-                            // 回転用のアフィン行列を生成.
                             self.baseTurnView.transform = CGAffineTransform(rotationAngle: angle)
                        }, completion: { (Bool) -> Void in
-                            //nilでよくね？
                        })
     }
     
     func turnTimerView(subview:UIView, ang:CGFloat, scale:CGFloat) {
         
-        //回転角度=90度
         let angle = CGFloat(M_PI) / 180 * ang
         
         UIView.animate(withDuration: 1.0,
@@ -520,12 +433,13 @@ class ViewController: UIViewController {
                             let t1 = CGAffineTransform(rotationAngle: angle )
                             let t2 = CGAffineTransform(scaleX: scale, y: scale)
                         
+                            //concatenating:連結の意
                             subview.transform = t1.concatenating(t2)
                        },
                        completion: { (Bool) -> Void in
         })
     }
     
-    
+    func readAloud(
 }
 
